@@ -22,8 +22,8 @@
     "depends": [
         "web",
     ],
-    "price": 30.50,
-    "currency": "EUR",
+    #"price": 30.50,
+    #"currency": "EUR",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "http://www.odoomrp.com",
     'images': ['static/description/popup.png'],
