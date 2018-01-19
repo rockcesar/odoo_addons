@@ -51,11 +51,20 @@ odoo.define('button_popup.FormView', function (require) {
             }
             
             if(self.url_val)
-                $.colorbox({href:self.url_val, iframe:true, width:900, height:600});
-            else
-                $.colorbox({html:'There is no popup option selected.<br/><br/>' + 
+            {
+                var width = 900;
+                var height = 600;
+                if(self.get_action_value('URL-width'))
+                    width = self.get_action_value('URL-width');
+                else if(self.get_action_value('URL-height'))
+                    height = self.get_action_value('URL-height');
                     
-                                'You should set a selection field in the model with the format URL:dns_address<br/>' + 
+                $.colorbox({href:self.url_val, iframe:true, width:width, height:height});
+            }
+            else
+                $.colorbox({html:'<h3><strong>There is no popup option selected.</strong></h3><br/><br/>'
+                    
+                                /*'You should set a selection field in the model with the format URL:dns_address<br/>' + 
                                 'urls = fields.Selection(string="URLs",' + 
                                 'selection = [("URL:https://www.google.com", "https://www.google.com"),' + 
                                 '("URL:https://www.wikipedia.com", "https://www.wikipedia.com"),' + 
@@ -65,10 +74,10 @@ odoo.define('button_popup.FormView', function (require) {
                                 '&lt;field name="urls" options="{\'horizontal\': true}" widget="radio"/&gt;<br/><br/>' + 
                                 
                                 'Or set the property URL="https://www.wikipedia.com" in the \'form\' tag:<br/>' + 
-                                '&lt;form string="Form title one" URL="https://www.wikipedia.com"&gt;<br/>' + 
+                                '&lt;form string="Form title one" URL="https://www.wikipedia.com" URL-width:900 URL-height:600&gt;<br/>' + 
                                 '    ...<br/>' + 
                                 '    ...<br/>' + 
-                                '&lt;form/&gt;'});
+                                '&lt;form/&gt;'*/});
         },
         is_action_enabled: function(action) {
             var attrs = this.fields_view.arch.attrs;

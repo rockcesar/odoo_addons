@@ -5,7 +5,7 @@
             <field name="name">demo.popup.form.view</field>
             <field name="model">demo.popup</field>
             <field name="arch" type="xml">
-                <form string="Form title one" URL="">
+                <form string="Form title one" URL="" URL-width="1200" URL-height="700">
                     <field name="urls" options="{'horizontal': true}" widget="radio"/>
                 </form>
             </field>
