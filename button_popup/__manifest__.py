@@ -26,6 +26,7 @@
     "currency": "EUR",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "http://www.odoomrp.com",
+    'images': ['static/description/popup.png'],
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
