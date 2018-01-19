@@ -1,0 +1,32 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Read Only ByPass</h2>
+        <div class="oe_span6">
+            <p class="oe_mt32">
+                <strong><h3>Read Only ByPass</h3></strong><br/><br/>
+                
+                This module provides a solution to the problem of the interaction between 'readonly' attribute and 'on_change' attribute when used together. It allows saving onchange modifications to readonly fields.<br/>
+                
+                Behavior: add readonly fields changed by on_change methods to the values passed to write or create. If readonly_by_pass is in the context and True then it will by pass readonly fields and save its data provide by onchange method.<br/>
+                
+                <strong><h3>Usage</h3></strong><br/><br/>
+                
+                This module changes the behaviour of Odoo by propagating on_change modifications to readonly fields to the backend create and write methods.<br/>
+                
+                To change that behavior you have to set context on ur.actions.act_window:<br/><br/>
+                
+                &lt;record id="sale.action_quotations" model="ir.actions.act_window"&gt;<br/>
+                    &lt;field name="context"&gt;{'readonly_by_pass': True}&lt;/field&gt;<br/>
+                &lt;/record&gt;<br/>
+                
+                <strong><h3>or by telling fields allowed to change:</h3></strong><br/><br/><br/>
+                
+                &lt;record id="sale.action_quotations" model="ir.actions.act_window"&gt;<br/>
+                    &lt;field name="context"&gt;<br/>
+                        {'readonly_by_pass': ['readonly_field_1', 'readonly_field_2',]}<br/>
+                    &lt;/field&gt;<br/>
+                &lt;/record&gt;
+            </p>
+        </div>
+    </div>
+</section>
