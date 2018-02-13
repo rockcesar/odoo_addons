@@ -1,4 +1,4 @@
-Web - Numpad Dot as decimal separator
+Web - Button PopUp
 =====================================
 
 
@@ -9,7 +9,4 @@ Credits
 Contributors
 ------------
 
-* Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
-* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
-* Ana Juaristi <anajuaristi@avanzosc.es>
-* Omar Castiñeira Saavedra <omar@comunitea.com>
+* César Cordero Rodríguez <cesar.cordero.r@gmail.com>
