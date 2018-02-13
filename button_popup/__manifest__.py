@@ -30,7 +30,7 @@
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
-    "category": "Custom Module",
+    "category": "Extra Tools",
     "summary": "",
     "data": [
         "views/template.xml",
