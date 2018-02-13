@@ -60,9 +60,7 @@ Credits
 Contributors
 ------------
 
-* Jonathan Nemry <jonathan.nemry@acsone.eu>
-* Laetitia Gangloff <laetitia.gangloff@acsone.eu>
-* Pierre Verkest <pverkest@anybox.fr>
+* César Cordero Rodríguez <cesar.cordero.r@gmail.com
 
 Maintainer
 ----------
