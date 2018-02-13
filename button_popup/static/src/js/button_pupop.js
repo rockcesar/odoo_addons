@@ -74,7 +74,7 @@ odoo.define('button_popup.FormView', function (require) {
                                 '&lt;field name="urls" options="{\'horizontal\': true}" widget="radio"/&gt;<br/><br/>' + 
                                 
                                 'Or set the property URL="https://www.wikipedia.com" in the \'form\' tag:<br/>' + 
-                                '&lt;form string="Form title one" URL="https://www.wikipedia.com" URL-width:900 URL-height:600&gt;<br/>' + 
+                                '&lt;form string="Form title one" URL="https://www.wikipedia.com" URL-width="900" URL-height="600"&gt;<br/>' + 
                                 '    ...<br/>' + 
                                 '    ...<br/>' + 
                                 '&lt;form/&gt;'*/});

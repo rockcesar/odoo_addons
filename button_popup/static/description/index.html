@@ -5,9 +5,9 @@
             <p class="oe_mt32">
             <strong><h3>You should set a selection field in the model with the format URL:dns_address</h3></strong><br/>
             urls = fields.Selection(string="URLs",
-            selection = [("URL:https://www.google.com", "https://www.google.com"),
-            ("URL:https://www.wikipedia.com", "https://www.wikipedia.com"),
-            ("URL:http://localhost:8069", "http://localhost:8069")])<br/><br/>
+            selection = [("URL:https://www.google.com", "Google (https://www.google.com)"),
+            ("URL:https://www.wikipedia.com", "Wikipedia (https://www.wikipedia.com)"),
+            ("URL:http://localhost:8069", "Localhost (http://localhost:8069)")])<br/><br/>
             </p>
             
             <p class="oe_mt32">
@@ -17,7 +17,7 @@
             
             <p class="oe_mt32">
             <strong><h3>Or set the property URL="https://www.wikipedia.com" in the 'form' tag:</h3></strong><br/>
-            &lt;form string="Form title one" URL="https://www.wikipedia.com" URL-width:900 URL-height:600&gt;<br/> 
+            &lt;form string="Form title one" URL="https://www.wikipedia.com" URL-width="900" URL-height="600"&gt;<br/> 
                 ...<br/>
                 ...<br/>
             &lt;form/&gt;
