@@ -22,9 +22,9 @@
     "depends": [
         "base",
     ],
-    'license': 'OPL-1',
-    "price": 100,
-    "currency": "EUR",
+    'license': 'GPLv3',
+    #"price": ,
+    #"currency": "",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://www.cr-innova.com.ve",
     'images': ['static/description/description.png'],
