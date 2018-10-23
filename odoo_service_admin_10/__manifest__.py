@@ -22,7 +22,6 @@
     "depends": [
         "base",
     ],
-    'license': 'AGPL-3',
     #"price": ,
     #"currency": "",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
