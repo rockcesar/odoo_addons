@@ -8,12 +8,12 @@
         'base',
         ],
     'description': '''
-        \n\nThis is a new translator.
+        \n\nThis is a new Odoo translate.
     ''',
     'init_xml': [],
     'installable': True,
     'license': 'AGPL-3',
-    'name': u'Translator for Odoo',
+    'name': u'Odoo translate',
     'test': [],
     'data': [
         #'security/ir.model.access.csv',
