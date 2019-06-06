@@ -11,25 +11,10 @@ odoo.define('button_popup.FormView', function (require) {
     
     var FormView_Extend = FormView.include({
         render_buttons: function($node) {
-            this.$buttons = $('<div/>');
-            
-            var $footer = this.$('footer');
-            if (this.options.action_buttons !== false || this.options.footer_to_buttons && $footer.children().length === 0) {
-                this.$buttons.append(QWeb.render("FormView.buttons", {'widget': this}));
+            this._super($node);
+            if (this.$buttons) {
+                this.$buttons.find('.o_form_button_popup').on('click', this.on_button_popup);
             }
-            if (this.options.footer_to_buttons) {
-                $footer.appendTo(this.$buttons);
-            }
-            
-            // Show or hide the buttons according to the view mode
-            this.toggle_buttons();
-            this.$buttons.on('click', '.o_form_button_create', this.on_button_create);
-            this.$buttons.on('click', '.o_form_button_edit', this.on_button_edit);
-            this.$buttons.on('click', '.o_form_button_save', this.on_button_save);
-            this.$buttons.on('click', '.o_form_button_cancel', this.on_button_cancel);
-            this.$buttons.on('click', '.o_form_button_popup', this.on_button_popup);
-            
-            this.$buttons.appendTo($node);
         },
         on_button_popup: function() {
             var self = this;
@@ -79,11 +64,11 @@ odoo.define('button_popup.FormView', function (require) {
                                 '    ...<br/>' + 
                                 '&lt;form/&gt;'*/});
         },
-        is_action_enabled: function(action) {
+        /*is_action_enabled: function(action) {
             var attrs = this.fields_view.arch.attrs;
             return (action in attrs) ? JSON.parse(attrs[action]) : false;
             //return (action in attrs) ? JSON.parse(attrs[action]) : true;
-        },
+        },*/
         get_action_value: function(action) {
             var attrs = this.fields_view.arch.attrs;
             return (action in attrs) ? attrs[action] : false;
@@ -91,8 +76,8 @@ odoo.define('button_popup.FormView', function (require) {
         },
     });
     
-    return {
+    /*return {
         FormView: FormView_Extend,
-    };
+    };*/
     
 });
