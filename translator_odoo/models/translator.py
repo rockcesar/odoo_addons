@@ -12,6 +12,7 @@ import base64
 
 class Translator_online(models.Model):
     _name = "translator"
+    _description = "Translator"
 
     name = fields.Char("Name of term to translate")
     text = fields.Text("Text to be translated")

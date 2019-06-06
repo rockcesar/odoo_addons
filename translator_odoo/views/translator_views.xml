@@ -56,7 +56,7 @@
         
         <menuitem
               id="menu_main_translator_action_form"
-              groups="base.group_system"
+              groups="group_translator_odoo_manager"
               name="Translator"
               sequence="3"/>
         
@@ -65,8 +65,9 @@
               id="menu_translator_action_form"
               parent="translator_odoo.menu_main_translator_action_form"
               name="Lets translate it"
-              groups="base.group_system"
+              groups="group_translator_odoo_manager"
               sequence="3"/>
     </data>
 </odoo>
+
 
