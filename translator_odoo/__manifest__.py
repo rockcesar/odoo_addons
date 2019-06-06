@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {   'active': True,
-    'author': u'Lcdo. César Cordero Rodríguez, part of University of Zulia professionals',
+    'author': u'Lcdo. César Cordero Rodríguez, part of CR-Innova Consultants and University of Zulia professionals',
     'website': 'https://teaching.cr-innova-consultants.com',
     'category': 'Translation',
     'demo_xml': [],
@@ -13,7 +13,7 @@
     'init_xml': [],
     'installable': True,
     'license': 'AGPL-3',
-    'name': u'Good stuffs',
+    'name': u'Translator for Odoo',
     'test': [],
     'data': [
         #'security/ir.model.access.csv',
