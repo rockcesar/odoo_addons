@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <!-- Printable view of a survey (all pages) -->
+    <template id="translator_website" name="Translator Website">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+              <section class="pt32 pb32">
+                <div class="container">
+                  <div class="row s_nb_column_fixed">
+                    <div class="col-lg-2 s_title pt16 pb16" style="text-align: center;" ></div>
+                    <div class="col-lg-8 s_title pt16 pb16" style="text-align: center; width: 500 px">
+                      <form role="form" t-attf-action="/translate_website"
+                                method="post" onsubmit="this.action = this.action + location.hash"
+                                enctype="multipart/form-data">
+                                <input type="hidden" name="csrf_token"
+                                t-att-value="request.csrf_token()"/>
+                                <div class="form-group">
+                                <t t-if="name" t-set="name_value" t-value="'%s' % (name, )" />
+                                <t t-if="not name" t-set="name_value" t-value="''" />
+                                
+                                <t t-if="email" t-set="email_value" t-value="'%s' % (email, )" />
+                                <t t-if="not email" t-set="email_value" t-value="''" />
+                                
+                                <t t-if="text" t-set="text_value" t-value="'%s' % (text, )" />
+                                <t t-if="not text" t-set="text_value" t-value="''" />
+                                
+                                <t t-if="term_translated" t-set="term_translated_value" t-value="'%s' % (term_translated, )" />
+                                <t t-if="not term_translated" t-set="term_translated_value" t-value="''" />
+                                
+                                <t t-if="name_of_file" t-set="name_of_file_value" t-value="'%s' % (name_of_file, )" />
+                                <t t-if="not name_of_file" t-set="name_of_file_value" t-value="''" />
+                                
+                                <label for="name">Your Name</label>
+                                <input type="text" placeholder="Name"
+                                    name="name" t-att-value="name_value"
+                                    id="name" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" 
+                                    required="required" autofocus="autofocus"
+                                    autocapitalize="off"/>
+                                    
+                                <!--<label for="email">Your Email</label>
+                                <input type="text" placeholder="Email"
+                                    name="email" t-att-value="email_value"
+                                    id="email" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" 
+                                    required="required" autofocus="autofocus"
+                                    autocapitalize="off"/>-->
+                           </div>
+                           <div class="form-group">
+                                <label for="name">Text</label>
+                                <textarea placeholder="Text" name="text" 
+                                    id="text" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" 
+                                    required="required" autofocus="autofocus" 
+                                    autocapitalize="off" 
+                                    rows="5"><t t-esc="text_value" /></textarea>
+                           </div>
+                           <div class="form-group">
+                                <label for="name">Term translated</label>
+                                <textarea placeholder="Term translated" 
+                                    name="term_translated" 
+                                    id="term_translated" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" 
+                                    autofocus="autofocus" 
+                                    autocapitalize="off" 
+                                    rows="5"><t t-esc="term_translated" /></textarea>
+                           </div>
+                           <div class="form-group">
+                                <label for="name_of_file">File to translate</label>
+                                <input placeholder="File to translate" name="name_of_file" type="file"  />
+                           </div>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select class="form-control" name="language">
+                                    <option value="" ></option>
+                                    <t t-if="languages">
+                                        <t t-foreach="languages" t-as="v">
+                                            <option t-if="v.code and v.code == language_selected" t-att-value="'%s' % (v.code,)" t-esc="v.name" selected="True" />
+                                            <option t-elif="v.code and v.code != language_selected" t-att-value="'%s' % (v.code,)" t-esc="v.name" />
+                                            <option t-else="" t-att-value="'%s' % (v.code,)" t-esc="v.name" />
+                                        </t>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="type_of_input">Type of input</label>
+                                <select class="form-control" name="type_of_input">
+                                    <option value=""> </option>
+                                    <t t-foreach="type_of_input_list" t-as="v">
+                                        <option t-if="v['code'] and v['code'] == type_of_input_selected" t-att-value="'%s' % (v['code'],)" t-esc="v['name']" selected="True" />
+                                        <option t-elif="v['code'] and v['code'] != type_of_input_selected" t-att-value="'%s' % (v['code'],)" t-esc="v['name']" />
+                                        <option t-else="" t-att-value="'%s' % (v['code'],)" t-esc="v['name']" />
+                                    </t>
+                                </select>
+                            </div>
+                            <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-2' if form_small else 'pt-3'}}">
+                                <input type="submit" class="btn btn-primary btn-block" value="Translate" />
+                            </div>
+                      </form>
+                    </div>
+                    <div class="col-lg-2 s_title pt16 pb16" style="text-align: center;" ></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+        </t>
+    </template>
+</data>
+</odoo>

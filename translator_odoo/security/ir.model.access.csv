@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_translator_odoo_translator_admin,translator_odoo_translator_admin,model_translator,base.group_system,1,1,1,1
 access_translator_odoo_translator_manager,translator_odoo_translator_manager,model_translator,translator_odoo.group_translator_odoo_manager,1,1,1,1
+access_translator_odoo_language_admin,translator_odoo_language_admin,model_language,base.group_system,1,1,1,1
+access_translator_odoo_language_manager,translator_odoo_language_manager,model_language,translator_odoo.group_translator_odoo_manager,1,1,1,1

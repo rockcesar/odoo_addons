@@ -6,7 +6,7 @@
     'demo_xml': [],
     'depends': [
         'base',
-        ],
+    ],
     'description': '''
         This is a new translator.
 
@@ -38,7 +38,10 @@
         'security/translator_odoo_security.xml',
         'security/ir.model.access.csv',
         'views/translator_views.xml',
+        'views/languages_views.xml',
+        'views/translator_templates.xml',
     ],
+    
     'version': '',
     'application': True,
 }
