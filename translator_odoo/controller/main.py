@@ -49,13 +49,11 @@ class ControllerTranslate(http.Controller):
             if 'code' in values and values['code'] == "":
                 del values['code']
             
-            _logger.info("values " + str(values))
-            
-            language_id = request.env['language'].search([('code', '=', values['language'])])
+            language_id = request.env['language'].sudo(SUPERUSER_ID).search([('code', '=', values['language'])])
             values.update({'language': language_id.id})
             translate_it = request.env['translator'].sudo(SUPERUSER_ID).create(values)
             
-            term_translated = translate_it.translate_to_website()
+            term_translated = translate_it.sudo(SUPERUSER_ID).translate_to_website()
             
             if len(term_translated) > 0:
                 values.update({'term_translated': term_translated[0]})
@@ -65,7 +63,7 @@ class ControllerTranslate(http.Controller):
             values.update({'language_selected': language_id.code})
             values.update({'type_of_input_selected': values['type_of_input']})
         
-        values.update({'languages': request.env['language'].search([])})
+        values.update({'languages': request.env['language'].sudo(SUPERUSER_ID).search([])})
         values.update({'type_of_input_list': [{'code': 'using_text_field', 'name': 'Using Text Field'}, 
                                     {'code': 'using_file', 'name': 'Using File'}]})
                                     
