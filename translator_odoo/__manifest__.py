@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {   'active': True,
     'author': u'Lcdo. César Cordero Rodríguez, part of CR-Innova Consultants and University of Zulia professionals',
-    'website': 'https://translator-it.cr-innova-consultants.com',
+    'website': 'https://translate-it.cr-innova-consultants.com',
     'category': 'Translation',
     'demo_xml': [],
     'depends': [
