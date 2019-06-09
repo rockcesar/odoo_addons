@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-      <record id="translator_tree" model="ir.ui.view">
+        <record id="translator_tree" model="ir.ui.view">
             <field name="name">translator_odoo.translator.tree</field>
             <field name="model">translator</field>
             <field name="arch" type="xml">
