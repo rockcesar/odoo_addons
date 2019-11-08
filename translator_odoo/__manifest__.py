@@ -31,7 +31,7 @@
     ''',
     'init_xml': [],
     'installable': True,
-    'license': 'AGPL-3'
+    'license': 'AGPL-3',
     'name': 'Translator for Odoo',
     'test': [],
     'data': [
