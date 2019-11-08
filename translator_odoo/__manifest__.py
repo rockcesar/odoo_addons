@@ -41,7 +41,8 @@
         'views/languages_views.xml',
         'views/translator_templates.xml',
     ],
-    
+    'images': ['static/description/popup.png'],
+
     'version': '',
     'application': True,
 }
