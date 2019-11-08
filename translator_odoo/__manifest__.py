@@ -41,7 +41,7 @@
         'views/languages_views.xml',
         'views/translator_templates.xml',
     ],
-    'images': ['static/description/icon.png'],
+    'images': ['static/description/description.png'],
     
     'version': '',
     'application': True,
