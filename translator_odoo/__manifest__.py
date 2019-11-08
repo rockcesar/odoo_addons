@@ -32,7 +32,7 @@
     'init_xml': [],
     'installable': True,
     'license': 'AGPL-3'
-    'name': u'Translator for Odoo',
+    'name': 'Translator for Odoo',
     'test': [],
     'data': [
         'security/translator_odoo_security.xml',
