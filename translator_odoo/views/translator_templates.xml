@@ -60,7 +60,7 @@
                                     id="term_translated" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" 
                                     autofocus="autofocus" 
                                     autocapitalize="off" 
-                                    rows="5"><t t-esc="term_translated" /></textarea>
+                                    rows="5"  ><t t-esc="term_translated" /></textarea>
                            </div>
                            <div class="form-group">
                                 <label for="name_of_file">File to translate</label>
