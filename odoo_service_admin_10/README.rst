@@ -25,7 +25,7 @@ COMMAND_DIRECTORY = /etc/init.d/odoo_scripts/
 
     # Install odoo:
 
-    # https://www.odoo.com/documentation/10.0/setup/install.html
+    # https://www.odoo.com/documentation/11.0/setup/install.html
     sudo aptitude install odoo
 
     # To execute scripts as USER=odoo, example:
