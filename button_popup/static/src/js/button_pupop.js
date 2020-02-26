@@ -10,8 +10,8 @@ odoo.define('button_popup.FormView', function (require) {
     var QWeb = core.qweb;
     
     var FormView_Extend = FormController.include({
-        renderButtons: function(parent, model, renderer, params) {
-            this._super.apply(this, arguments);
+        renderButtons: function($node) {
+            this._super($node);
             if (this.$buttons) {
                 this.$buttons.find('.o_form_button_popup').on('click', this.on_button_popup);
             }
@@ -70,7 +70,7 @@ odoo.define('button_popup.FormView', function (require) {
             //return (action in attrs) ? JSON.parse(attrs[action]) : true;
         },*/
         get_action_value: function(action) {
-            var attrs = this.renderer.state.fields;
+            var attrs = this.renderer.arch.attrs;
             return (action in attrs) ? attrs[action] : false;
             //return (action in attrs) ? JSON.parse(attrs[action]) : true;
         },
