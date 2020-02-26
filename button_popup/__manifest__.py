@@ -25,7 +25,7 @@
     #"price": 30.50,
     #"currency": "EUR",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
-    "website": "http://dev-rockcesar.blogspot.com",
+    "website": "https://cr-innova.negocio.site/",
     'images': ['static/description/popup.png'],
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
