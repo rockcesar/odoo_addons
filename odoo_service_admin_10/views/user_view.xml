@@ -52,7 +52,6 @@
         <record id='config_user_servers_action' model='ir.actions.act_window'>
             <field name="name">Config User Servers</field>
             <field name="res_model">config.user.servers</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">['|', ('create_uid','=', uid), ('write_uid','=', uid)]</field>
             <field name="help" type="html">
