@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-import config_server
-import config_admin
-import config_user
+from . import config_server
+from . import config_admin
+from . import config_user
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
