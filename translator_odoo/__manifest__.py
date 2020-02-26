@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {   'active': True,
-    'author': u'Lcdo. César Cordero Rodríguez, part of CR-Innova Consultants and University of Zulia professionals',
+    'author': u'César Cordero Rodríguez <cesar.cordero.r@gmail.com>',
     'website': 'https://cr-innova.negocio.site/',
     'category': 'Translation',
     'demo_xml': [],
