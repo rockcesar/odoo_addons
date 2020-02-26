@@ -3,7 +3,7 @@
 
     <t t-extend="FormView.buttons">
         <t t-jquery=".o_form_button_save" t-operation="after">
-            <button type="button" class="btn btn-primary btn-sm o_form_button_popup" accesskey="p">
+            <button type="button" class="btn btn-primary o_form_button_popup" accesskey="p">
                 Show Pop Up
             </button>
             

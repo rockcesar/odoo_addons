@@ -3,15 +3,15 @@ odoo.define('button_popup.FormView', function (require) {
     
     //var instance = openerp;
     
-    var FormView = require('web.FormView');
+    var FormController = require('web.FormController');
     
     var core = require('web.core');
     
     var QWeb = core.qweb;
     
-    var FormView_Extend = FormView.include({
-        render_buttons: function($node) {
-            this._super($node);
+    var FormView_Extend = FormController.include({
+        renderButtons: function(parent, model, renderer, params) {
+            this._super.apply(this, arguments);
             if (this.$buttons) {
                 this.$buttons.find('.o_form_button_popup').on('click', this.on_button_popup);
             }
@@ -20,15 +20,15 @@ odoo.define('button_popup.FormView', function (require) {
             var self = this;
             
             self.url_val = self.get_action_value('URL');
-            
+
             if(!self.url_val)
             {
-                $(".o_form_radio").each(function(index,item){
+                $("input[type='radio']").each(function(index, item){
                     if($(item).is( ":checked" ))
                     {
-                        if($(item).val().startsWith("URL:"))
+                        if($(item).attr("data-value").startsWith("URL:"))
                         {
-                            self.url_val = $(item).val().substr(4);
+                            self.url_val = $(item).attr("data-value").substr(4);
                             return;
                         }
                     }
@@ -70,7 +70,7 @@ odoo.define('button_popup.FormView', function (require) {
             //return (action in attrs) ? JSON.parse(attrs[action]) : true;
         },*/
         get_action_value: function(action) {
-            var attrs = this.fields_view.arch.attrs;
+            var attrs = this.renderer.state.fields;
             return (action in attrs) ? attrs[action] : false;
             //return (action in attrs) ? JSON.parse(attrs[action]) : true;
         },
