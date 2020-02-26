@@ -25,7 +25,7 @@
     #"price": ,
     #"currency": "",
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
-    "website": "https://www.cr-innova.com.ve",
+    "website": "https://cr-innova.negocio.site/",
     'images': ['static/description/description.png'],
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
