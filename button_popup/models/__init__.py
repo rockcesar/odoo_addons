@@ -19,6 +19,6 @@
 #
 ##############################################################################
 
-import demo_popup
+from . import demo_popup
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
