@@ -28,7 +28,6 @@ class ConfigUserServers(models.Model):
     can_restart = fields.Boolean('Can restart', store=False, compute="_can")
     
     @api.model
-    @api.one
     def _get_status(self):
         self.status = self.server_id.status
         
@@ -37,7 +36,6 @@ class ConfigUserServers(models.Model):
         self.status = self.server_id.status
     
     @api.model
-    @api.one
     def _can(self):
         result = self.env['config.server.list'].search([('config_admin_id', '=', self.config_admin_id.id), 
                                                         ('server_id', '=', self.server_id.id)])
@@ -65,17 +63,14 @@ class ConfigUserServers(models.Model):
             self.can_stop = False
             self.can_restart = False
     
-    #@api.multi
     #def write(self, vals):
     #    #print str(self.env.context)
     #    #raise exceptions.UserError(_('This is not to edit, just to Start, Stop or Restart Odoo servers'))
     
     @api.model
-    @api.one
     def _curr_user(self):
         self.config_admin_id = self.env['config.admin.servers'].search([('user_id', '=', self.env.user.id)])
     
-    @api.one
     @api.depends('config_admin_id.server_ids')
     def _curr_server(self):
         result = list()
