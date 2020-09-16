@@ -11,3 +11,11 @@ https://youtu.be/zMUKTWLN5Uk
 
 Referal link: https://minepi.com/rockcesar
 Referal code: rockcesar
+
+To put it work, use Odoo 13.
+
+Test the app here: https://developers.minepi.com/about-app
+
+Documentation: https://developers.minepi.com/doc/javascript
+
+Pi Developers: https://developers.minepi.com/
