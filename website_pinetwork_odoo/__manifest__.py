@@ -32,6 +32,7 @@ Pi Developers: https://developers.minepi.com/""",
     'data': [
         'views/website_pinetwork_templates.xml',
     ],
+    'images': ['static/description/icon.png'],
     'qweb': [],
     'installable': True,
     'auto_install': True,
