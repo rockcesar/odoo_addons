@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="menu_config_first_module"
+        name="Config First Module"
+        groups="first_module.group_first_user,base.group_system"
+        sequence="75"/>
+            
+    <menuitem
+        id="menu_person"
+        name="Person"
+        groups="first_module.group_first_user,base.group_system"
+        parent="menu_config_first_module"
+        action="person_action"
+        sequence="75"/>
+        
+    <menuitem
+        id="menu_house"
+        name="House"
+        groups="first_module.group_first_user,base.group_system"
+        parent="menu_config_first_module"
+        action="house_action"
+        sequence="75"/>
+        
+    <menuitem
+        id="menu_car"
+        name="Car"
+        groups="first_module.group_first_user,base.group_system"
+        parent="menu_config_first_module"
+        action="car_action"
+        sequence="75"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_res_partner_alt_inherit_form">
+        <field name="name">res.partner.inherit.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            
+            <field name="name" position="before">
+                <field name="partner_number" placeholder="Partner number"/>
+            </field>
+            
+        </field>
+    </record>
+</odoo>

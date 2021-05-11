@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_first_module_group_first_user_1,first.module.group.first.user.1,first_module.model_house,first_module.group_first_user,1,1,1,1
+access_first_module_group_first_user_2,first.module.group.first.user.2,first_module.model_car,first_module.group_first_user,1,1,1,1
+access_first_module_group_first_user_3,first.module.group.first.user.3,first_module.model_person,first_module.group_first_user,1,1,1,1
+access_first_module_group_first_user_4,first.module.group.first.user.4,base.model_res_partner,first_module.group_first_user,1,1,1,1

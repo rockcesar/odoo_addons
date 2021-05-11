@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="report_person_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="r">
+                    <div class="page">
+                        <img t-if="r.photo_litle" t-att-src="image_data_uri(r.photo_litle)" style="max-height: 100px;" alt="Image"/><br/>
+                        <strong>Name <span t-field="r.name"/></strong><br/>
+                        <strong>Last name <span t-field="r.last_name"/></strong><br/>
+                        <strong>Age <span t-field="r.age"/></strong><br/>
+                        <strong>Sex <span t-field="r.sex"/></strong><br/>
+                        <strong>Wallet <span t-field="r.wallet"/></strong><br/>
+                        <strong>Houses</strong><br/>
+                        <t t-foreach="r.houses_ids" t-as="house">
+                            <div style="border-left:2px solid;border-right:2px solid;border-bottom:2px solid;border-top:2px solid">
+                                <strong>Name <span t-field="house.name"/></strong><br/>
+                                <strong>Description <span t-field="house.description"/></strong><br/>
+                                <strong>House number <span t-field="house.house_number"/></strong><br/>
+                            </div><br/>
+                        </t>
+                        <strong>Car</strong><br/>
+                        <t t-foreach="r.car_ids" t-as="car">
+                            <div style="border-left:2px solid;border-right:2px solid;border-bottom:2px solid;border-top:2px solid">
+                                <strong>Name <span t-field="car.name"/></strong><br/>
+                                <strong>Description <span t-field="car.description"/></strong><br/>
+                            </div><br/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+           
+        <record id="paperformat_person" model="report.paperformat">
+            <field name="name">Format for the person</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <record id="report_person_action" model="ir.actions.report">
+            <field name="name">Format for the person</field>
+            <field name="model">person</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">first_module.report_person_document</field>
+            <field name="report_file">first_module.report_person_document</field>
+            <field name="print_report_name">'Format for the person'</field>
+            <field name="binding_view_types">form</field>
+            <field name="binding_model_id" ref="model_person"/>
+            <field name="paperformat_id" ref="first_module.paperformat_person" />
+        </record>
+            
+        <record id="first_module.report_person_action" model="ir.actions.report">
+            <field name="paperformat_id" ref="first_module.paperformat_person" />
+        </record>
+    </data>
+</odoo>
