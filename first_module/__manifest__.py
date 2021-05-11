@@ -9,6 +9,7 @@
     'contributors': [
         'César Cordero Rodríguez <cesar.cordero.r@gmail.com>',
     ],
+    'images': ['static/description/first.png'],
     'description': """
         
         Primer módulo.
