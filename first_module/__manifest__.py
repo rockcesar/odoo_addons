@@ -3,7 +3,7 @@
 
 {
     'name': 'First module (for learning Odoo)',
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'website'],
     'author': 'César Cordero Rodríguez <cesar.cordero.r@gmail.com>',
     'website': 'https://cr-innova.negocio.site/',
     'contributors': [
@@ -21,6 +21,7 @@
     ],
     'data': [
         'reports/template_report.xml',
+        'views/person_templates.xml',
         'views/car_v.xml',
         'views/house_v.xml',
         'views/person_v.xml',

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="person_website">
+            <t t-call="website.layout">
+                <div class="col-12 col-sm-6 col-md-8">
+                    <t t-foreach="docs" t-as="r">
+                        <div class="page">
+                            <img t-if="r.photo_litle" t-att-src="image_data_uri(r.photo_litle)" style="max-height: 100px;" alt="Image"/><br/>
+                            <strong>Name <span t-field="r.name"/></strong><br/>
+                            <strong>Last name <span t-field="r.last_name"/></strong><br/>
+                            <strong>Age <span t-field="r.age"/></strong><br/>
+                            <strong>Sex <span t-field="r.sex"/></strong><br/>
+                            <strong>Wallet <span t-field="r.wallet"/></strong><br/>
+                            <strong>Houses</strong><br/>
+                            <t t-foreach="r.houses_ids" t-as="house">
+                                <div style="border-left:2px solid;border-right:2px solid;border-bottom:2px solid;border-top:2px solid">
+                                    <strong>Name <span t-field="house.name"/></strong><br/>
+                                    <strong>Description <span t-field="house.description"/></strong><br/>
+                                    <strong>House number <span t-field="house.house_number"/></strong><br/>
+                                </div><br/>
+                            </t>
+                            <strong>Car</strong><br/>
+                            <t t-foreach="r.car_ids" t-as="car">
+                                <div style="border-left:2px solid;border-right:2px solid;border-bottom:2px solid;border-top:2px solid">
+                                    <strong>Name <span t-field="car.name"/></strong><br/>
+                                    <strong>Description <span t-field="car.description"/></strong><br/>
+                                </div><br/>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </template>
+        
+    </data>
+</odoo>
