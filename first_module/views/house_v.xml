@@ -8,11 +8,13 @@
                 <sheet>
                     <notebook>
                         <page string="House">
-                            <group colspan="1">
-                                <field name="name"/>
-                                <field name="description"/>
-                                <field name="persons_ids" widget="many2many_tags"/>
-                                <field name="house_number"/>
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="persons_ids" widget="many2many_tags"/>
+                                    <field name="house_number"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>

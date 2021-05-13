@@ -8,11 +8,13 @@
                 <sheet>
                     <notebook>
                         <page string="Car">
-                            <group colspan="1">
-                                <field name="name"/>
-                                <field name="description"/>
-                                <field name="person_id"/>
-                                <field name="photo_person" widget="image" class="oe_avatar" options='{"size": "image_medium"}' readonly="True"/>
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="person_id"/>
+                                    <field name="photo_person" widget="image" class="oe_avatar" options='{"size": "image_medium"}' readonly="True"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>

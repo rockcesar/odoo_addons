@@ -14,15 +14,17 @@
                 <sheet>
                     <notebook>
                         <page string="Persona">
-                            <group colspan="1">
-                                <field name="photo" widget="image" class="oe_avatar" options='{"size": "image_medium"}'/>
-                                <field name="name"/>
-                                <field name="last_name" attrs="{'readonly': [('age','&lt;',18)]}"/>
-                                <field name="age"/>
-                                <field name="sex"/>
-                                <field name="wallet" attrs="{'invisible': [('age', '&lt;', 18)]}"/>
-                                <field name="houses_ids" widget="many2many_tags"/>
-                                <field name="car_ids" widget="many2many_tags"/>
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="photo" widget="image" class="oe_avatar" options='{"size": "image_medium"}'/>
+                                    <field name="name"/>
+                                    <field name="last_name" attrs="{'readonly': [('age','&lt;',18)]}"/>
+                                    <field name="age"/>
+                                    <field name="sex"/>
+                                    <field name="wallet" attrs="{'invisible': [('age', '&lt;', 18)]}"/>
+                                    <field name="houses_ids" widget="many2many_tags"/>
+                                    <field name="car_ids" widget="many2many_tags"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>
