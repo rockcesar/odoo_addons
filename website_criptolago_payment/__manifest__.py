@@ -16,7 +16,7 @@
 #
 ##############################################################################
 {
-    'name': 'Criptolago payment for Odoo',
+    'name': 'Criptolago payment for Odoo (unofficial)',
     'category': 'Website/Website',
     'sequence': 54,
     'summary': 'Criptolago payment for Odoo',
