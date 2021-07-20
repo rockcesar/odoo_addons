@@ -17,3 +17,6 @@ class admin_criptolago(models.Model):
     name = fields.Char('Nombre')
     active_code = fields.Boolean('Código activo', required=True)
     client_code = fields.Char('Código cliente', required=True)
+    url_cancel = fields.Char('URL Cancel', required=True)
+    url_fail = fields.Char('URL Fail', required=True)
+    url_works = fields.Char('URL Works', required=True)

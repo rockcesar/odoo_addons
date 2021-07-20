@@ -16,7 +16,15 @@ class CriptolagoController(http.Controller):
         
         if len(admin_criptolago_list) == 0:
             client_code = ""
+            url_cancel = ""
+            url_fail = ""
+            url_works = ""
         else:
             client_code = admin_criptolago_list[0].client_code
+            url_cancel = admin_criptolago_list[0].url_cancel
+            url_fail = admin_criptolago_list[0].url_fail
+            url_works = admin_criptolago_list[0].url_works
         
-        return http.request.render('website_criptolago_payment.criptolago', {'client_code': client_code})
+        return http.request.render('website_criptolago_payment.criptolago', {'client_code': client_code, 
+                                                                            'url_cancel': url_cancel, 'url_fail': url_fail,
+                                                                            'url_works': url_works})

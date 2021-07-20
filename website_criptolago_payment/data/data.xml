@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Groups  -->
+        <record id="criptolado_data" model="admin.criptolago">
+            <field name="name">Criptolago</field>
+            <field name="active_code">True</field>
+            <field name="client_code">Set your client code</field>
+            <field name="url_cancel">https://dev-rockcesar.blogspot.com/p/criptolago-cancelado.html</field>
+            <field name="url_fail">https://dev-rockcesar.blogspot.com/p/criptolago-fallo.html</field>
+            <field name="url_works">https://dev-rockcesar.blogspot.com/p/criptolago-exito.html</field>
+        </record>
+    </data>
+</odoo>

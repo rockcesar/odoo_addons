@@ -42,6 +42,7 @@ Más información aquí: https://dev-rockcesar.blogspot.com/2020/09/pagar-con-cr
         'security/groups_security.xml',
         'views/admin_criptolago_v.xml',
         'security/ir.model.access.csv',
+        'data/data.xml',
     ],
     'images': ['static/description/icon.png'],
     'qweb': [],
