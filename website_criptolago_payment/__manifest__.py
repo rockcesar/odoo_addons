@@ -33,7 +33,9 @@ Dona los Dólares que puedas. Para donar debes tener cuenta en Criptolago, si no
 
 Para usar el módulo, debes agregar el código de cliente en el menú Config Admin Criptolago -> Admin Criptolago
 
-Main page: /criptolago""",
+Main page: /criptolago
+
+Más información aquí: https://dev-rockcesar.blogspot.com/2020/09/pagar-con-criptolago.html""",
     'depends': ['website'],
     'data': [
         'views/website_criptolago_templates.xml',
