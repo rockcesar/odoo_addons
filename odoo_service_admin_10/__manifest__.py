@@ -17,7 +17,7 @@
 ##############################################################################
 
 {
-    "name": "Odoo Service Admin 10",
+    "name": "Odoo Service Admin",
     "version": "1.0",
     "depends": [
         "base",
