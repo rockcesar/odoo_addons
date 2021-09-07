@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_config_admin_1,access.config.admin.1,model_config_admin_servers,group_config_admin_servers,1,1,1,1
+access_config_admin_2,access.config.admin.2,model_config_user_servers,group_config_admin_servers,1,1,1,1
+access_config_admin_3,access.config.admin.3,model_config_server,group_config_admin_servers,1,1,1,1
+access_config_admin_4,access.config.admin.4,model_config_server_list,group_config_admin_servers,1,1,1,1
+access_config_user_1,access.config.user.1,model_config_admin_servers,group_config_user_servers,1,0,0,0
+access_config_user_2,access.config.user.2,model_config_user_servers,group_config_user_servers,1,1,1,1
+access_config_user_3,access.config.user.3,model_config_server,group_config_user_servers,1,1,0,0
+access_config_user_4,access.config.user.4,model_config_server_list,group_config_user_servers,1,0,0,0

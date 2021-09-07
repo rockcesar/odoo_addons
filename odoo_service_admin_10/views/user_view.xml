@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id='config_user_servers_model_view_form' model='ir.ui.view'>
+            <field name="name">config.user.servers.form</field>
+            <field name="model">config.user.servers</field>
+            <field name="arch" type="xml">
+                <form string="Config User Servers" create="true" edit="true" delete="true">
+                    <sheet>
+                        <notebook>
+                            <page string="Config User Servers">
+                                <group string="Server">
+                                    <!--<field name="id" />-->
+                                    <field name="config_admin_id" invisible="True"/>
+                                    <field name="server_ids" invisible="True"/>
+                                    <field name="server_id"/>
+                                    <field name="status" readonly="True"/>
+                                    
+                                    <field name="can_start" readonly="True" invisible="False"/>
+                                    <field name="can_stop" readonly="True" invisible="False"/>
+                                    <field name="can_restart" readonly="True" invisible="False"/>
+                                </group>
+                                <!--<group string="Permissions">
+                                    
+                                </group>-->
+                                <separator string="Controls" colspan="4"/>
+                                <button name="start_service" confirm="Are you sure you want to perform this action on the server?" string="Start" type="object" class="btn-success" attrs="{'invisible':[('can_start','=',False)]}"/> | 
+                                <button name="stop_service" confirm="Are you sure you want to perform this action on the server?" string="Stop" type="object" class="btn-danger" attrs="{'invisible':[('can_stop','=',False)]}"/> | 
+                                <button name="restart_service" confirm="Are you sure you want to perform this action on the server?" string="Restart" type="object" class="btn-primary" attrs="{'invisible':[('can_restart','=',False)]}" /> | 
+                                <button name="refresh_service" string="Refresh" type="object" class="btn-default" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='config_user_servers_model_view_tree' model='ir.ui.view'>
+            <field name="name">config.user.servers.tree</field>
+            <field name="model">config.user.servers</field>
+            <field name="arch" type="xml">
+                <tree string="Config User Servers" create='true' delete='true'>
+                    <field name="server_id" />
+                    <field name="status" />
+                    <field name="can_start" />
+                    <field name="can_stop" />
+                    <field name="can_restart" />
+                </tree>
+            </field>
+        </record>
+
+        <record id='config_user_servers_action' model='ir.actions.act_window'>
+            <field name="name">Config User Servers</field>
+            <field name="res_model">config.user.servers</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('create_uid','=', uid), ('write_uid','=', uid)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Config User Servers.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_config_user_servers"
+            name="User Servers"
+            parent="menu_config_servers"
+            groups="group_config_user_servers"
+            sequence="1"/>
+        <menuitem
+            id="menu_config_user_servers_child"
+            name="Config User Servers"
+            parent="menu_config_user_servers"
+            action="config_user_servers_action"
+            groups="group_config_user_servers"
+            sequence="1"/>
+    </data>
+</odoo>

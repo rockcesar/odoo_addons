@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id='config_server_model_view_form' model='ir.ui.view'>
+            <field name="name">config.server.form</field>
+            <field name="model">config.server</field>
+            <field name="arch" type="xml">
+                <form string="Config Server">
+                    <sheet>
+                        <notebook>
+                            <page string="Config Server">
+                                <group string="Variables">
+                                    <field name="name" required="1" />
+                                    <field name="command_directory" required="1" />
+                                    <field name="command_directory_list" required="0" />
+                                    <field name="command_directory_list_domain" required="0" />
+                                    <!--<field name="commands_list" required="1" group="group_config_admin_servers"/>-->
+                                    <field name="command" required="1" readonly="0" />
+                                    <field name="status" readonly="1" />
+                                    <field name="status_detailed" readonly="1" />
+                                </group>
+                                <separator string="Controls" colspan="4"/>
+                                <button name="start_service" confirm="Are you sure you want to perform this action on the server?" string="Start" type="object" class="btn-success" /> | 
+                                <button name="stop_service" confirm="Are you sure you want to perform this action on the server?" string="Stop" type="object" class="btn-danger" /> | 
+                                <button name="restart_service" confirm="Are you sure you want to perform this action on the server?" string="Restart" type="object" class="btn-primary" /> | 
+                                <button name="refresh_service" string="Refresh" type="object" class="btn-default" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='config_server_model_view_tree' model='ir.ui.view'>
+            <field name="name">config.server.tree</field>
+            <field name="model">config.server</field>
+            <field name="arch" type="xml">
+                <tree string="Config Server">
+                    <field name="name" />
+                    <field name="command_directory" />
+                    <field name="command" />
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+        <record id='config_server_action' model='ir.actions.act_window'>
+            <field name="name">Config Servers</field>
+            <field name="res_model">config.server</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Config Servers.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_config_server_1_child"
+            name="Servers"
+            parent="menu_config_admin_servers"
+            action="config_server_action"
+            groups="group_config_admin_servers"
+            sequence="1"/>
+            
+            
+            
+            
+            
+        <record id='config_server_list_model_view_form' model='ir.ui.view'>
+            <field name="name">config.server.list.form</field>
+            <field name="model">config.server.list</field>
+            <field name="arch" type="xml">
+                <form string="Server Config List">
+                    <sheet>
+                        <notebook>
+                            <page string="Server Config List">
+                                <group string="Variables">
+                                    <field name="server_id" required="1" />
+                                    <field name="config_admin_id" readonly="0" />
+                                    <field name="name" readonly="1" />
+                                    <field name="command" readonly="1" />
+                                    <field name="status" readonly="1" />
+                                    <field name="status_detailed" readonly="1" />
+                                    <field name="can_start" />
+                                    <field name="can_stop" />
+                                    <field name="can_restart" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='config_server_list_model_view_tree' model='ir.ui.view'>
+            <field name="name">config.server.list.tree</field>
+            <field name="model">config.server.list</field>
+            <field name="arch" type="xml">
+                <tree string="Server Config List">
+                    <field name="server_id" />
+                    <field name="config_admin_id" />
+                    <field name="name" />
+                    <field name="command" />
+                    <field name="status" />
+                    <field name="can_start" />
+                    <field name="can_stop" />
+                    <field name="can_restart" />
+                </tree>
+            </field>
+        </record>
+
+        <record id='config_server_list_action' model='ir.actions.act_window'>
+            <field name="name">Servers Config List</field>
+            <field name="res_model">config.server.list</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Config Servers List.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_config_server_list_1_child"
+            name="Servers Config List"
+            parent="menu_config_admin_servers"
+            action="config_server_list_action"
+            groups="group_config_admin_servers"
+            sequence="1"/>
+    </data>
+</odoo>
