@@ -25,13 +25,13 @@ class ConfigAdminServers(models.Model):
     def write(self, vals):
         result = super(ConfigAdminServers, self).write(vals)
         
-        result_self = self.search([('id', '=', self.id)])
+        #result_self = self.search([('id', '=', self.id)])
         
-        result_config = self.env['config.user.servers'].search([('config_admin_id', '=', self.id), ('server_id', 'not in', [x.id for x in result_self.server_ids])])
+        #result_config = self.env['config.user.servers'].search([('config_admin_id', '=', self.id), ('server_id', 'not in', [x.id for x in result_self.server_ids])])
         
-        _logger.info(str(result_config))
+        #_logger.info(str(result_config))
         
-        result_config.unlink()
+        #result_config.unlink()
         
         return result
     

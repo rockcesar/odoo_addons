@@ -53,7 +53,7 @@
             <field name="name">Config User Servers</field>
             <field name="res_model">config.user.servers</field>
             <field name="view_mode">tree,form</field>
-            <field name="domain">['|', ('create_uid','=', uid), ('write_uid','=', uid)]</field>
+            <field name="domain">['|', ('config_admin_id.user_id', '=', uid), ('create_uid','=', uid)]</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to create a new Config User Servers.
