@@ -14,6 +14,7 @@
                                     <field name="config_admin_id" invisible="True"/>
                                     <field name="server_ids" invisible="True"/>
                                     <field name="server_id"/>
+                                    <field name="command" />
                                     <field name="status" readonly="True"/>
                                     
                                     <field name="can_start" readonly="True" invisible="False"/>
@@ -41,6 +42,7 @@
             <field name="arch" type="xml">
                 <tree string="Config User Servers" create='true' delete='true'>
                     <field name="server_id" />
+                    <field name="command" />
                     <field name="status" />
                     <field name="can_start" />
                     <field name="can_stop" />

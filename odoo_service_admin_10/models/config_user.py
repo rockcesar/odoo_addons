@@ -22,6 +22,7 @@ class ConfigUserServers(models.Model):
     config_admin_id = fields.Many2one('config.admin.servers', string='Config Admin', default=_default_admin, domain="[('user_id', '=', uid)]", compute="_curr_user", store=True)
     server_ids = fields.Many2many('config.server', 'config_user_config_server_rel', 'config_user_id', 'config_server_id', compute="_curr_server", string="Severs IDS")
     server_id = fields.Many2one('config.server', string='Server', required=True, domain="[('id', 'in', server_ids)]")
+    command = fields.Char('Command', related='server_id.command')
     status = fields.Char('Status', compute="_get_status", store=False)
     can_start = fields.Boolean('Can start', store=False, compute="_can")
     can_stop = fields.Boolean('Can stop', store=False, compute="_can")
