@@ -104,9 +104,9 @@ class ConfigServer(models.Model):
     status_detailed = fields.Text('Status detailed', compute="_curr_state")
     command_directory_list_domain = fields.Char("Commands list available", compute="_get_commands_list_domain")
     
-    _sql_constraints = [
-        ('unique_command', 'UNIQUE(command)', 'Command must be unique')
-    ]
+    #_sql_constraints = [
+    #    ('unique_command', 'UNIQUE(command)', 'Command must be unique')
+    #]
     
     #@api.onchange('commands_list')
     #def _on_change_commands_list(self):
