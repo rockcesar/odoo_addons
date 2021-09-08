@@ -34,7 +34,8 @@ class ConfigUserServers(models.Model):
         
     @api.onchange('server_id')
     def _get_status(self):
-        self.status = self.server_id.status
+        for s in self:
+            s.status = s.server_id.status
     
     @api.model
     def _can(self):
@@ -85,16 +86,20 @@ class ConfigUserServers(models.Model):
             s.server_ids = self.env["config.server"].search([('id','in',result)])
     
     def stop_service(self):
-        self.server_id.stop_service()
+        for s in self:
+            s.server_id.stop_service()
     
     def start_service(self):
-        self.server_id.start_service()
+        for s in self:
+            s.server_id.start_service()
     
     def restart_service(self):
-        self.server_id.restart_service()
+        for s in self:
+            s.server_id.restart_service()
     
     def refresh_service(self):
-        self.server_id.refresh_service()
+        for s in self:
+            s.server_id.refresh_service()
     
     _sql_constraints = [
         ('unique_config_admin_server_id', 'UNIQUE(config_admin_id, server_id)', 'The user must have just one configuration per server')
