@@ -166,6 +166,8 @@ class ConfigServer(models.Model):
     def _curr_state(self):
         for s in self:
             if not s.file_command_exists():
+                s.status = ""
+                s.status_detailed = ""
                 return 
                 #raise exceptions.UserError(_('Command file doesn\'t exists'))
             
