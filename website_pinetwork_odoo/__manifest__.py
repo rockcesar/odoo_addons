@@ -16,7 +16,7 @@
 #
 ##############################################################################
 {
-    'name': 'Pi Network First App for Odoo',
+    'name': 'LatinChain First App for Odoo (works in the Pi Network TM)',
     'category': 'Website/Website',
     'sequence': 54,
     'summary': 'LatinChain First App for Odoo (works in the Pi Network TM)',
