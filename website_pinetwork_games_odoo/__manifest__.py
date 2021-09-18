@@ -16,7 +16,7 @@
 #
 ##############################################################################
 {
-    'name': 'Pi Network Games Engine and Platform for Odoo',
+    'name': 'LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)',
     'category': 'Website/Website',
     'sequence': 54,
     'summary': 'LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)',
