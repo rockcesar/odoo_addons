@@ -37,6 +37,7 @@ function get_user() {
                 if(data.unblocked)
                 {
                     $("#pause").show();
+                    $("#reset").show();
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
@@ -61,6 +62,7 @@ $( document ).ready(function() {
     
     async function auth() {
         $("#pause").hide();
+        $("#reset").hide();
         $("#pi_donate").hide();
         $("#button_click").show();
         try {
