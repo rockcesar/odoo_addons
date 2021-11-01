@@ -14,6 +14,9 @@
                                     <field name="pi_user_id" readonly="True"/>
                                     <field name="pi_user_code" readonly="True"/>
                                     <field name="points" readonly="True"/>
+                                    <field name="points_chess" readonly="True"/>
+                                    <field name="points_sudoku" readonly="True"/>
+                                    <field name="points_snake" readonly="True"/>
                                     <field name="paid" readonly="True"/>
                                     <field name="unblocked" />
                                 </group>

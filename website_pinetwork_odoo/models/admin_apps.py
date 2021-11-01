@@ -166,5 +166,8 @@ class pi_users(models.Model):
     pi_user_id = fields.Char('Pi User ID', required=True)
     pi_user_code = fields.Char('Pi User Code', required=True)
     points = fields.Float('Pi User Points', required=True)
+    points_chess = fields.Float('Chess Points', required=True)
+    points_sudoku = fields.Float('Sudoku Points', required=True)
+    points_snake = fields.Float('Snake Points', required=True)
     paid = fields.Float('Paid by user')
     unblocked = fields.Boolean('Unblocked')
