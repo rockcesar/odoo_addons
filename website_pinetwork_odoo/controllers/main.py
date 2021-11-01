@@ -72,7 +72,6 @@ class PiNetworkBaseController(http.Controller):
                 values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
-                                'points': pi_users_list[0].points + float(kw['points']),
                             }
                 if kw['app_client'] == "auth_platform":
                     values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
