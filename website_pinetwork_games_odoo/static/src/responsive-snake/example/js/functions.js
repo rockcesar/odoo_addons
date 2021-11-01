@@ -35,12 +35,17 @@ function get_user() {
             if(data.result)
             {
                 if(data.unblocked)
-                {                    
+                {
+                    $("#pause").show();
+                    $("#reset").show();
                     $("#pi_donate").hide();
                     $("#button_click").hide();
+                    
+                    $("#pause").click();
                 }
                 else
                 {
+                    $("#pause").hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                 }
@@ -56,6 +61,8 @@ $( document ).ready(function() {
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     async function auth() {
+        $("#pause").hide();
+        $("#reset").hide();
         $("#pi_donate").hide();
         $("#button_click").show();
         try {
