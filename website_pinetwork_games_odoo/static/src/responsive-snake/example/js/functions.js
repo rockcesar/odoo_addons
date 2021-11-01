@@ -62,7 +62,6 @@ $( document ).ready(function() {
     
     async function auth() {
         $("#pause").hide();
-        $("#pause").click();
         $("#pi_donate").hide();
         $("#button_click").show();
         try {
