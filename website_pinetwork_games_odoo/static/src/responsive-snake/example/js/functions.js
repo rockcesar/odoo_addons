@@ -22,7 +22,7 @@ function set_points(points) {
     }
 }
 
-function get_user(pause) {
+function get_user() {
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -40,10 +40,7 @@ function get_user(pause) {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
-                    if(pause)
-                        alert("Now you can give click on pause");
-                    else
-                        $("#pause").click();
+                    $("#pause").click();
                 }
                 else
                 {
@@ -91,7 +88,7 @@ $( document ).ready(function() {
                 
                 set_points(0);
                 
-                get_user(false);
+                get_user();
                 
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
@@ -155,7 +152,7 @@ $( document ).ready(function() {
                         
                         return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    get_user(true);
+                                    get_user();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
