@@ -159,6 +159,7 @@
                         explosion      : true,
                         pause          : true,
                     });
+                    ResponsiveSnake.game.pause();
                 });
             </script>
             </body>

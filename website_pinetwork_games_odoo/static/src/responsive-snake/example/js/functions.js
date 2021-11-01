@@ -61,7 +61,7 @@ $( document ).ready(function() {
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     async function auth() {
-        $("#pause").hide();
+        $("#pause").show();
         $("#pi_donate").hide();
         $("#button_click").show();
         try {
