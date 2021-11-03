@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="FormView.buttons">
+        <t t-jquery=".o_form_button_save" t-operation="after">
+            <button type="button" class="btn btn-primary o_form_button_popup" accesskey="p">
+                Show Pop Up
+            </button>
+            
+            <!--
+            <input type="radio" value="https://www.google.com" name="group1" class="popup_option">https://www.google.com</input>
+            <input type="radio" value="https://www.wikipedia.com" name="group1" class="popup_option">https://www.wikipedia.com</input>
+            <input type="radio" value="http://localhost/phppgadmin" name="group1" class="popup_option">http://localhost/phppgadmin</input>
+            -->
+        </t>
+    </t>
+
+</templates>

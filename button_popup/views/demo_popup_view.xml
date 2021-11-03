@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id='demo_popup_model_view_form' model='ir.ui.view'>
+            <field name="name">demo.popup.form.view</field>
+            <field name="model">demo.popup</field>
+            <field name="arch" type="xml">
+                <form string="Form title one" URL="" URL-width="1200" URL-height="700">
+                    <field name="urls" options="{'horizontal': true}" widget="radio"/>
+                </form>
+            </field>
+        </record>
+
+        <record id='demo_popup_alt_action' model='ir.actions.act_window'>
+            <field name="name">Demo Popup</field>
+            <field name="res_model">demo.popup</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Demo Popup.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_demo_popup_first"
+            name="Demo Popup 1"
+            sequence="1"/>
+        
+        <menuitem
+            id="menu_demo_popup_alt"
+            name="Demo Popup 2"
+            parent="menu_demo_popup_first"
+            action="demo_popup_alt_action"
+            sequence="1"/>
+    </data>
+</odoo>
