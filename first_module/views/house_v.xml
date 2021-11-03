@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='house_view_form' model='ir.ui.view'>
+        <field name="name">house.form</field>
+        <field name="model">house</field>
+        <field name="arch" type="xml">
+            <form string="House">
+                <sheet>
+                    <notebook>
+                        <page string="House">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="persons_ids" widget="many2many_tags"/>
+                                    <field name="house_number"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='house_view_tree' model='ir.ui.view'>
+        <field name="name">house.tree</field>
+        <field name="model">house</field>
+        <field name="arch" type="xml">
+            <tree string="House">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="persons_ids"/>
+                <field name="house_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='house_action' model='ir.actions.act_window'>
+        <field name="name">House</field>
+        <field name="res_model">house</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new house.
+          </p>
+        </field>
+    </record>
+</odoo>

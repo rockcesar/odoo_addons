@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_criptolago_admin_group_criptolago_admin_1,criptolago.admin.group.criptolago.admin.1,website_criptolago_payment.model_admin_criptolago,website_criptolago_payment.group_criptolago_admin,1,1,1,1

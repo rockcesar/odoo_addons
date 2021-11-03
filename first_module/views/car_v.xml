@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='car_view_form' model='ir.ui.view'>
+        <field name="name">car.form</field>
+        <field name="model">car</field>
+        <field name="arch" type="xml">
+            <form string="Car">
+                <sheet>
+                    <notebook>
+                        <page string="Car">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="person_id"/>
+                                    <field name="photo_person" widget="image" class="oe_avatar" options='{"size": "image_medium"}' readonly="True"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='car_view_tree' model='ir.ui.view'>
+        <field name="name">car.tree</field>
+        <field name="model">car</field>
+        <field name="arch" type="xml">
+            <tree string="Car">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="person_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='car_action' model='ir.actions.act_window'>
+        <field name="name">Car</field>
+        <field name="res_model">car</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new car.
+          </p>
+        </field>
+    </record>
+</odoo>
