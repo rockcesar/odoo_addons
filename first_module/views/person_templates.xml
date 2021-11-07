@@ -3,7 +3,7 @@
 <odoo>
     <data>
         <template id="person_website">
-            <t t-call="website.layout">
+            <t t-call="web.layout">
                 <div class="col-12 col-sm-6 col-md-8">
                     <t t-foreach="docs" t-as="r">
                         <div class="page">
@@ -31,6 +31,37 @@
                         </div>
                     </t>
                 </div>
+            </t>
+        </template>
+        
+        <template id="person_onboard">
+            <t t-call="web.layout">
+                <div>
+                    Hi <input type="button" value="IR" id="ir_jquery"/>
+                </div>
+
+                <script type="text/javascript">
+                    function call_function() {
+                        var data = {
+                                    'var_1': "123",
+                                    'var_2': "321",
+                                    'csrf_token': odoo.csrf_token,
+                                };
+                        return $.post( "/call-fuction-example", data).done(function(data) {
+                            data = JSON.parse(data);
+                            alert(data.result);
+                            location.reload();
+                        }).fail(function() {
+                            
+                        });
+                    }
+                    $( document ).ready(function() {
+                        $( "#ir_jquery" ).click(function() {
+                            call_function();
+                        });
+                    });
+
+                </script>
             </t>
         </template>
         

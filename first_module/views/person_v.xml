@@ -37,7 +37,7 @@
         <field name="name">person.tree</field>
         <field name="model">person</field>
         <field name="arch" type="xml">
-            <tree string="Person">
+            <tree string="Person" banner_route="/person_onboard">
                 <field name="name"/>
                 <field name="last_name"/>
                 <field name="age"/>
