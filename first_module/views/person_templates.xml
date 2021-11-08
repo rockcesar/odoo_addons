@@ -37,7 +37,8 @@
         <template id="person_onboard">
             <t t-call="web.layout">
                 <div>
-                    Hi <input type="button" value="IR" id="ir_jquery"/>
+                    Hi. Select the one you need and click in Crear un Carro<br/>
+                    Example of button <input type="button" value="IR" id="ir_jquery"/>
                 </div>
 
                 <script type="text/javascript">

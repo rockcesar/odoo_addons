@@ -76,3 +76,13 @@ class person(models.Model):
         unlink_result = super(person, self).unlink()
         
         return unlink_result
+        
+    def action_button_1(self):
+        return {'type': 'ir.actions.act_window',
+               'name': _('Mark as Done'),
+               'res_model': 'car',
+               'target': 'new',
+               'view_id': self.env.ref('first_module.car_view_form').id,
+               'view_mode': 'form',
+               #'context': {'default_person_id': self.id}
+               }
