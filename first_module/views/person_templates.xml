@@ -83,7 +83,7 @@
         <template id="person_onboarding_panel" name="person.onboarding.panel">
             <t t-call="base.onboarding_container">
                 <t t-set="classes" t-value="'o_onboarding_blue'"/>
-                <t t-set="bg_image" t-value="'/account/static/src/img/account_invoice_onboarding_bg.jpg'"/>
+                <t t-set="bg_image" t-value="'/first_module/static/src/img/account_invoice_onboarding_bg.jpg'"/>
                 <t t-set="close_method" t-value="'method_2'"/>
                 <t t-set="close_model" t-value="'car'"/>
                 <t t-set="text_completed">Congratulations! You are all set.</t>
