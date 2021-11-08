@@ -81,6 +81,11 @@ class person(models.Model):
     @api.model
     def action_button_1(self):
         action = self.env["ir.actions.actions"]._for_xml_id("first_module.car_onboarding_action")
+        #return action
+        action.update({'res_id': self.env['car'].search([], limit=1)[0].id})
+        
+        _logger.info(str(action))
+        
         return action
         
         """
@@ -93,3 +98,14 @@ class person(models.Model):
                #'context': {'default_person_id': self.id}
                }
         """
+    
+    @api.model
+    def action_button_2(self):
+        return {'type': 'ir.actions.act_window',
+               'name': _('Mark as Done'),
+               'res_model': 'car',
+               'target': 'new',
+               'view_id': self.env.ref('first_module.car_view_form').id,
+               'view_mode': 'form',
+               #'context': {'default_person_id': self.id}
+               }
