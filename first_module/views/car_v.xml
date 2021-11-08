@@ -45,4 +45,13 @@
           </p>
         </field>
     </record>
+    
+    <record id="car_onboarding_action" model="ir.actions.act_window">
+        <field name="name">Create first car</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="first_module.car_view_form" />
+    </record>
 </odoo>

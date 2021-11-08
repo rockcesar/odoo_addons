@@ -36,3 +36,19 @@ class ControllerTranslate(http.Controller):
         _logger.info(kw['var_1'])
         
         return json.dumps({'result': kw['var_1']})
+
+    @http.route('/firs_module/person_onboarding', auth='user', type='json')
+    def account_invoice_onboarding(self):
+        company = request.env.company
+        person = request.env["person"].search([], limit=1)
+        person = person[0]
+        if not request.env.is_admin() or \
+                person.first_module_onboarding_car_state == 'option1':
+            return {}
+
+        return {
+            'html': request.env.ref('first_module.person_onboarding_panel')._render({
+                'company': company,
+                'state': {'first_module_onboarding_car_state': person.first_module_onboarding_car_state}
+                })
+        }

@@ -42,6 +42,7 @@ class person(models.Model):
     photo_litle = fields.Binary(string='Photo of the person',
                                 compute="_compute_photo_depends",
                                 store=False)
+    first_module_onboarding_car_state = fields.Selection([('option1', 'Option1'), ('option2', 'Option2')], string="Options")
     
     @api.depends('photo')
     def _compute_photo_depends(self):
@@ -76,8 +77,13 @@ class person(models.Model):
         unlink_result = super(person, self).unlink()
         
         return unlink_result
-        
+    
+    @api.model
     def action_button_1(self):
+        action = self.env["ir.actions.actions"]._for_xml_id("first_module.car_onboarding_action")
+        return action
+        
+        """
         return {'type': 'ir.actions.act_window',
                'name': _('Mark as Done'),
                'res_model': 'car',
@@ -86,3 +92,4 @@ class person(models.Model):
                'view_mode': 'form',
                #'context': {'default_person_id': self.id}
                }
+        """

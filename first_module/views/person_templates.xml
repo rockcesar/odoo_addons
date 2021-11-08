@@ -66,5 +66,33 @@
             </t>
         </template>
         
+        <template id="onboarding_car_step">
+            <t t-call="base.onboarding_step">
+                <t t-set="title">Create Car</t>
+                <t t-set="description">
+                    Create a car.
+                </t>
+                <t t-set="btn_text">Create</t>
+                <t t-set="done_text">Done!</t>
+                <t t-set="method" t-value="'action_button_1'" />
+                <t t-set="model" t-value="'person'" />
+                <t t-set="state" t-value="state.get('first_module_onboarding_car_state')" />
+            </t>
+        </template>
+        
+        <template id="person_onboarding_panel" name="person.onboarding.panel">
+            <t t-call="base.onboarding_container">
+                <t t-set="classes" t-value="'o_onboarding_blue'"/>
+                <t t-set="bg_image" t-value="'/account/static/src/img/account_invoice_onboarding_bg.jpg'"/>
+                <t t-set="close_method" t-value="'method_2'"/>
+                <t t-set="close_model" t-value="'car'"/>
+                <t t-set="text_completed">Congratulations! You are all set.</t>
+
+                <!--<t t-call="base.onboarding_company_step" name="company_step" />-->
+                <t t-call="first_module.onboarding_car_step" name="car_layout_step" />
+                <!--<t t-call="account.onboarding_create_invoice_step" name="create_invoice_step" />-->
+            </t>
+        </template>
+        
     </data>
 </odoo>
