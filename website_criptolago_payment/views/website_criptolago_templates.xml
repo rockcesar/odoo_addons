@@ -47,18 +47,20 @@
                   });
                 </script>
                 <form accept-charset="utf-8" action="https://criptolago.io/api/pagos/iniciarpago" method="post" target="_blank">
-                    <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
-                    <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" /><br />
-                    ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
-                    <input name="asset_monto_original" type="hidden" value="8" />
-                    <input name="asset_disponibles" type="hidden" value="2,3,4" />
-                    <input id="transaccion_comercio_id" name="transaccion_comercio_id" type="hidden" value="" />
-                    <input id="public_transaccion_comercio_id" name="public_transaccion_comercio_id" type="hidden" value="" />
-                    <input name="url_exito" type="hidden" t-att-value="url_works"/>
-                    <input name="url_fallo" type="hidden" t-att-value="url_fail"/>
-                    <input name="url_cancel" type="hidden" t-att-value="url_cancel"/>
-                    <input name="descripcion" type="hidden" value="Pasarela de pagos" />
-                    <input alt="Pagar con Criptolago" disabled="true" id="button_criptolago" src="https://criptolago.io/pasarela/pasarelaclbutton.png" type="image" />
+                    <div class="container form-group" style="text-align:center !important">
+                        <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
+                        <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" /><br />
+                        ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
+                        <input name="asset_monto_original" type="hidden" value="8" />
+                        <input name="asset_disponibles" type="hidden" value="2,3,4" />
+                        <input id="transaccion_comercio_id" name="transaccion_comercio_id" type="hidden" value="" />
+                        <input id="public_transaccion_comercio_id" name="public_transaccion_comercio_id" type="hidden" value="" />
+                        <input name="url_exito" type="hidden" t-att-value="url_works"/>
+                        <input name="url_fallo" type="hidden" t-att-value="url_fail"/>
+                        <input name="url_cancel" type="hidden" t-att-value="url_cancel"/>
+                        <input name="descripcion" type="hidden" value="Pasarela de pagos" />
+                        <input class="btn btn-primary" alt="Pagar con Criptolago" disabled="true" id="button_criptolago" src="https://criptolago.io/pasarela/pasarelaclbutton.png" type="image" />
+                    </div>
                 </form>
 
             </html>
