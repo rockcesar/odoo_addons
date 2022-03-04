@@ -48,6 +48,8 @@
                 </script>
                 <form accept-charset="utf-8" action="https://criptolago.io/api/pagos/iniciarpago" method="post" target="_blank">
                     <div class="container form-group" style="text-align:center !important">
+                        <br/>
+                        <a class="btn btn-link" href="https://dev-rockcesar.blogspot.com/2020/09/pagar-con-criptolago.html">Click here to donate</a> or use the following form.<br/><br/>
                         <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
                         <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" lang="en-US"/><br />
                         ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
