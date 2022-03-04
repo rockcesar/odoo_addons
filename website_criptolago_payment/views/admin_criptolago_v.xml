@@ -55,6 +55,7 @@
         id="menu_config_admin_criptolago"
         name="Config Admin Criptolago"
         groups="website_criptolago_payment.group_criptolago_admin,base.group_system"
+        web_icon="website_criptolago_payment,static/description/icon.png"
         sequence="75"/>
             
     <menuitem
