@@ -61,7 +61,7 @@
                         <input name="url_fallo" type="hidden" t-att-value="url_fail"/>
                         <input name="url_cancel" type="hidden" t-att-value="url_cancel"/>
                         <input name="descripcion" type="hidden" value="Pasarela de pagos" />
-                        <input class="btn btn-primary" alt="Pagar con Criptolago" disabled="true" id="button_criptolago" src="https://criptolago.io/pasarela/pasarelaclbutton.png" type="image" />
+                        <input alt="Pagar con Criptolago" disabled="true" id="button_criptolago" src="https://criptolago.io/pasarela/pasarelaclbutton.png" type="image" />
                     </div>
                 </form>
 
