@@ -9,8 +9,8 @@
                   function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
                   // use like
                   r(function(){
-                      document.getElementById("monto_original").min = 1;
-                      document.getElementById("monto_original").step = 0.01;
+                      /*document.getElementById("monto_original").min = 1;
+                      document.getElementById("monto_original").step = 0.01;*/
                     
                       function Generator() {};
                     
@@ -49,7 +49,7 @@
                 <form accept-charset="utf-8" action="https://criptolago.io/api/pagos/iniciarpago" method="post" target="_blank">
                     <div class="container form-group" style="text-align:center !important">
                         <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
-                        <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" /><br />
+                        <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="1" min="1" step="0.01" lang="en-US"/><br />
                         ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
                         <input name="asset_monto_original" type="hidden" value="8" />
                         <input name="asset_disponibles" type="hidden" value="2,3,4" />
