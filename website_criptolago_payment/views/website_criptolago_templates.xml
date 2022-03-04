@@ -50,6 +50,13 @@
                     <div class="container form-group" style="text-align:center !important">
                         <br/>
                         <a class="btn btn-link" href="https://dev-rockcesar.blogspot.com/2020/09/pagar-con-criptolago.html">Click here to donate</a> or use the following form.<br/><br/>
+                        DONATE TO THIS MONERO (XMR) ADDRESS, OPTIONAL (DONA A ESTA DIRECCIÓN MONERO (XMR), OPCIONAL):<br/>
+                        82THbAcRdeE2DGBDLWWgdW66BoukYPa7PFgLoCQtA2NUCPHyiewjk94JriS67m9f6CTyt5eqkWb4fAaYYjgCcyVLL2Z6gCi<br/><br/>
+                        OR DONATE USDT IN TRC20 NETWORK, OPTIONAL (Ó DONA USDT EN LA RED TRC20, OPCIONAL):<br/>
+                        TEgrqQ7VG8z7JAJDweuyCCnhEUrQd7pucL<br/><br/>
+                        OR DONATE WITH CRIPTOLAGO, OPTIONAL (Ó DONA CON CRIPTOLAGO, OPCIONAL):<br/><br/>
+                        Informa de tu donación al email: <a class="btn btn-link" href="mailto:latinchain.info@gmail.com">latinchain.info@gmail.com</a><br/><br/>
+                        Inform of your donation to the email: <a class="btn btn-link" href="mailto:latinchain.info@gmail.com">latinchain.info@gmail.com</a><br/><br/>
                         <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
                         <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" lang="en-US"/><br />
                         ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
