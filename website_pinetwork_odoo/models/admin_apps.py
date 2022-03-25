@@ -50,9 +50,11 @@ class pi_transactions(models.Model):
         for pit in self:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
-            re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
+            re = ""
             
             try:
+                re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
+                
                 result = re.json()
                 
                 result_dict = json.loads(str(json.dumps(result)))
@@ -84,7 +86,7 @@ class pi_transactions(models.Model):
                 elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                     result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
-                    self.app_id.pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
+                    pit.app_id.pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                 elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                     not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
