@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="criptolago" name="Criptolago View">
+            <t t-call="website.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <script type="text/javascript">
+                  function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+                  // use like
+                  r(function(){
+                      document.getElementById("monto_original").min = 1;
+                      document.getElementById("monto_original").step = 0.01;
+                    
+                      function Generator() {};
+                    
+                      var da = Date.now();
+                      var d = new Date(da);
+
+                      Generator.prototype.rand = da + "" + d.getMilliseconds();
+
+                      Generator.prototype.getId = function() {
+                         return this.rand++;
+                      };
+                      var idGen =new Generator();
+                      var _id = idGen.getId();
+                      //_id lo más único posible.
+                    
+                      document.getElementById("monto_original").disabled = false;
+                      
+                      document.getElementById("monto_original").onkeyup=function(){
+                          var monto_original = document.getElementById("monto_original").value;
+                          if(monto_original >= 1)
+                          {
+                              document.getElementById("transaccion_comercio_id").value = _id + monto_original;
+                              document.getElementById("public_transaccion_comercio_id").value = _id + monto_original;
+                              document.getElementById("transaccion_id").value = _id + monto_original;
+                              document.getElementById("button_criptolago").disabled = false;
+                          }else if(document.getElementById("monto_original").value == "")
+                          {
+                              document.getElementById("transaccion_comercio_id").value = "";
+                              document.getElementById("public_transaccion_comercio_id").value = "";
+                              document.getElementById("transaccion_id").value = "";
+                              document.getElementById("button_criptolago").disabled = true;
+                          }
+                      }
+                  });
+                </script>
+                <form accept-charset="utf-8" action="https://criptolago.io/api/pagos/iniciarpago" method="post" target="_blank">
+                    <div class="container form-group" style="text-align:center !important">
+                        <br/>
+                        <a class="btn btn-link" href="https://dev-rockcesar.blogspot.com/2020/09/pagar-con-criptolago.html">Click here to donate</a> or use the following form.<br/><br/>
+                        DONATE TO THIS MONERO (XMR) ADDRESS, OPTIONAL (DONA A ESTA DIRECCIÓN MONERO (XMR), OPCIONAL):<br/>
+                        82THbAcRdeE2DGBDLWWgdW66BoukYPa7PFgLoCQtA2NUCPHyiewjk94JriS67m9f6CTyt5eqkWb4fAaYYjgCcyVLL2Z6gCi<br/><br/>
+                        OR DONATE USDT IN TRC20 NETWORK, OPTIONAL (Ó DONA USDT EN LA RED TRC20, OPCIONAL):<br/>
+                        TEgrqQ7VG8z7JAJDweuyCCnhEUrQd7pucL<br/><br/>
+                        OR DONATE WITH CRIPTOLAGO, OPTIONAL (Ó DONA CON CRIPTOLAGO, OPCIONAL):<br/><br/>
+                        Informa de tu donación al email: <a class="btn btn-link" href="mailto:latinchain.info@gmail.com">latinchain.info@gmail.com</a><br/><br/>
+                        Inform of your donation to the email: <a class="btn btn-link" href="mailto:latinchain.info@gmail.com">latinchain.info@gmail.com</a><br/><br/>
+                        <input name="codigo_cliente" type="hidden" t-att-value="client_code" />
+                        <span style="font-size: medium;"><b>Dona aquí.</b></span> Cuántos dólares quieres donar?, yo recibiré Bitcoin, Glufco ó Petro (funcionando). <br />Cantidad de Dólares:<br /><input disabled="true" id="monto_original" name="monto_original" type="number" value="" lang="en-US"/><br />
+                        ID Transacción:<br /><!--Este campo no es necesario--><input disabled="true" id="transaccion_id" type="text" value="" /><br /><br />
+                        <input name="asset_monto_original" type="hidden" value="8" />
+                        <input name="asset_disponibles" type="hidden" value="2,3,4" />
+                        <input id="transaccion_comercio_id" name="transaccion_comercio_id" type="hidden" value="" />
+                        <input id="public_transaccion_comercio_id" name="public_transaccion_comercio_id" type="hidden" value="" />
+                        <input name="url_exito" type="hidden" t-att-value="url_works"/>
+                        <input name="url_fallo" type="hidden" t-att-value="url_fail"/>
+                        <input name="url_cancel" type="hidden" t-att-value="url_cancel"/>
+                        <input name="descripcion" type="hidden" value="Pasarela de pagos" />
+                        <input alt="Pagar con Criptolago" disabled="true" id="button_criptolago" src="https://criptolago.io/pasarela/pasarelaclbutton.png" type="image" />
+                    </div>
+                </form>
+
+            </html>
+            </t>
+		</template>
+
+</odoo>

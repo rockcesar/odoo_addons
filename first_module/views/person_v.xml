@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='person_view_form' model='ir.ui.view'>
+        <field name="name">person.form</field>
+        <field name="model">person</field>
+        <field name="arch" type="xml">
+            <form string="Person">
+                <header>
+                    <button name="%(report_person_action)d"
+                        string="Person"
+                        type="action"
+                        class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <notebook>
+                        <page string="Persona">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="photo" widget="image" class="oe_avatar" options='{"size": "image_medium"}'/>
+                                    <field name="name"/>
+                                    <field name="last_name" attrs="{'readonly': [('age','&lt;',18)]}"/>
+                                    <field name="age"/>
+                                    <field name="sex"/>
+                                    <field name="wallet" attrs="{'invisible': [('age', '&lt;', 18)]}"/>
+                                    <field name="houses_ids" widget="many2many_tags"/>
+                                    <field name="car_ids" widget="many2many_tags"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='person_view_tree' model='ir.ui.view'>
+        <field name="name">person.tree</field>
+        <field name="model">person</field>
+        <field name="arch" type="xml">
+            <tree string="Person" banner_route="/firs_module/person_onboarding">
+                <header>
+                    <button name="action_button_2" string="Crear un carro" type="object" class="oe_stat_button"/>
+                </header>
+                <field name="name"/>
+                <field name="last_name"/>
+                <field name="age"/>
+                <field name="sex"/>
+                <field name="wallet"/>
+                <field name="houses_ids"/>
+                <field name="car_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='person_action' model='ir.actions.act_window'>
+        <field name="name">Person</field>
+        <field name="res_model">person</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new person.
+          </p>
+        </field>
+    </record>
+</odoo>

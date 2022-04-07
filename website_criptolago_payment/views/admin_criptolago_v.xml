@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='admin_criptolago_view_form' model='ir.ui.view'>
+        <field name="name">admin.criptolago.form</field>
+        <field name="model">admin.criptolago</field>
+        <field name="arch" type="xml">
+            <form string="Admin Criptolago">
+                <sheet>
+                    <notebook>
+                        <page string="Admin Criptolago">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="active_code"/>
+                                    <field name="client_code"/>
+                                    <field name="url_cancel"/>
+                                    <field name="url_fail"/>
+                                    <field name="url_works"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='admin_criptolago_view_tree' model='ir.ui.view'>
+        <field name="name">admin.criptolago.tree</field>
+        <field name="model">admin.criptolago</field>
+        <field name="arch" type="xml">
+            <tree string="Admin Criptolago">
+                <field name="name"/>
+                <field name="active_code"/>
+                <field name="client_code"/>
+                <field name="url_cancel"/>
+                <field name="url_fail"/>
+                <field name="url_works"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='admin_criptolago_action' model='ir.actions.act_window'>
+        <field name="name">Admin Criptolago</field>
+        <field name="res_model">admin.criptolago</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new admin criptolago.
+          </p>
+        </field>
+    </record>
+    
+    <menuitem
+        id="menu_config_admin_criptolago"
+        name="Config Admin Criptolago"
+        groups="website_criptolago_payment.group_criptolago_admin,base.group_system"
+        web_icon="website_criptolago_payment,static/description/icon.png"
+        sequence="75"/>
+            
+    <menuitem
+        id="menu_admin_criptolago"
+        name="Admin Criptolago"
+        groups="website_criptolago_payment.group_criptolago_admin,base.group_system"
+        parent="menu_config_admin_criptolago"
+        action="admin_criptolago_action"
+        sequence="75"/>
+</odoo>
