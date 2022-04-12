@@ -16,7 +16,8 @@
                                     <field name="user_id" />
                                 </group>
                                 <group string="Servers">
-                                    <field name="server_ids" editable="top">
+                                    <field name="server_ids" widget="many2many_tags"/>
+                                    <!--<field name="server_ids" editable="bottom">
                                         <tree string="Servers">
                                             <field name="name"/>
                                             <field name="command"/>
@@ -25,7 +26,7 @@
                                             <field name="can_stop"/>
                                             <field name="can_restart"/>
                                         </tree>
-                                    </field>
+                                    </field>-->
                                 </group>
                                 <!--<group string="Permissions">
                                     <field name="can_start" />

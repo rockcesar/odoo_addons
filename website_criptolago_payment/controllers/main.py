@@ -10,7 +10,11 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class CriptolagoController(http.Controller):
+<<<<<<< HEAD
     @http.route('/criptolago', type='http', auth="public", website=True)
+=======
+    @http.route(['/criptolago', '/donation'], type='http', auth="public", website=True)
+>>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
     def index(self, **kw):
         admin_criptolago_list = request.env["admin.criptolago"].sudo().search([('active_code', '=', True)])
         

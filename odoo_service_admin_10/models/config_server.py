@@ -13,7 +13,7 @@ import subprocess
 import sys
 from subprocess import Popen, PIPE
 
-import ConfigParser
+import configparser as ConfigParser
 
 import os
 import os.path
@@ -104,9 +104,9 @@ class ConfigServer(models.Model):
     status_detailed = fields.Text('Status detailed', compute="_curr_state")
     command_directory_list_domain = fields.Char("Commands list available", compute="_get_commands_list_domain")
     
-    _sql_constraints = [
-        ('unique_command', 'UNIQUE(command)', 'Command must be unique')
-    ]
+    #_sql_constraints = [
+    #    ('unique_command', 'UNIQUE(command)', 'Command must be unique')
+    #]
     
     #@api.onchange('commands_list')
     #def _on_change_commands_list(self):
@@ -117,15 +117,15 @@ class ConfigServer(models.Model):
     #def _on_compute_commands_list(self):
     #    self.command = self.commands_list
     
-    @api.one
     @api.model
     def _curr_directory(self):
-        directory = self.get_curr_directory()
-        
-        if not directory:
-            raise exceptions.UserError(_('Look for the COMMAND_DIRECTORY inside this Odoo Addon path.'))
-        
-        self.command_directory = directory
+        for s in self:
+            directory = s.get_curr_directory()
+            
+            if not directory:
+                raise exceptions.UserError(_('Look for the COMMAND_DIRECTORY inside this Odoo Addon path.'))
+            
+            s.command_directory = directory
     
     @api.model
     def file_command_exists(self):
@@ -162,28 +162,30 @@ class ConfigServer(models.Model):
             
         return file_stored
     
-    @api.one
     @api.model
     def _curr_state(self):
-        if not self.file_command_exists():
-            return 
-            #raise exceptions.UserError(_('Command file doesn\'t exists'))
-        
-        p = Popen(self.get_file_command() + " status | grep Active", shell=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
-        err = p.stderr.read()
-        out = p.stdout.read()
-        p.communicate()
-        return_val = str(p.wait())
-        
-        self.status = out
-        
-        p = Popen(self.get_file_command() + " status", shell=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
-        err = p.stderr.read()
-        out = p.stdout.read()
-        p.communicate()
-        return_val = str(p.wait())
-        
-        self.status_detailed = out
+        for s in self:
+            if not s.file_command_exists():
+                s.status = ""
+                s.status_detailed = ""
+                return 
+                #raise exceptions.UserError(_('Command file doesn\'t exists'))
+            
+            p = Popen(s.get_file_command() + " status | grep Active", shell=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
+            err = p.stderr.read()
+            out = p.stdout.read()
+            p.communicate()
+            return_val = str(p.wait())
+            
+            s.status = out
+            
+            p = Popen(s.get_file_command() + " status", shell=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
+            err = p.stderr.read()
+            out = p.stdout.read()
+            p.communicate()
+            return_val = str(p.wait())
+            
+            s.status_detailed = out
     
     @api.onchange('name', 'command')
     def _curr_state_change(self):
@@ -310,7 +312,6 @@ class ConfigServer(models.Model):
             
         return result
     
-    @api.multi
     def write(self, vals):
         #raise exceptions.UserError(_('Command file doesn\'t exists'))
         admin_user = False
@@ -320,8 +321,8 @@ class ConfigServer(models.Model):
                 break
         
         if not admin_user:
-            print str(vals.keys())
-            print str(len(vals.keys()) != 1 or ('status' not in vals.keys() and 'status_detailed' not in vals.keys()))
+            _logger.info(str(vals.keys()))
+            _logger.info(str(len(vals.keys()) != 1 or ('status' not in vals.keys() and 'status_detailed' not in vals.keys())))
             if len(vals.keys()) != 1 or ('status' not in vals.keys() and 'status_detailed' not in vals.keys()):
                 raise exceptions.UserError(_('You must be Admin User, contact the System Administrator'))
         
@@ -352,9 +353,9 @@ class ConfigServerList(models.Model):
     can_restart = fields.Boolean('Can restart')
     
     @api.model
-    @api.one
     def _curr_user(self):
-        self.config_admin_id = self.env['config.admin.servers'].search([('user_id', '=', self.env.user.id)])
+        for s in self:
+            s.config_admin_id = self.env['config.admin.servers'].search([('user_id', '=', self.env.user.id)])
     
     @api.onchange('server_id')
     def _curr_user_2(self):

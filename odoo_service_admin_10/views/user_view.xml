@@ -13,7 +13,8 @@
                                     <!--<field name="id" />-->
                                     <field name="config_admin_id" invisible="True"/>
                                     <field name="server_ids" invisible="True"/>
-                                    <field name="server_id" domain="[('id', 'in', server_ids and server_ids[0] and server_ids[0][2] or False)]"/>
+                                    <field name="server_id"/>
+                                    <field name="command" />
                                     <field name="status" readonly="True"/>
                                     
                                     <field name="can_start" readonly="True" invisible="False"/>
@@ -41,6 +42,7 @@
             <field name="arch" type="xml">
                 <tree string="Config User Servers" create='true' delete='true'>
                     <field name="server_id" />
+                    <field name="command" />
                     <field name="status" />
                     <field name="can_start" />
                     <field name="can_stop" />
@@ -53,7 +55,7 @@
             <field name="name">Config User Servers</field>
             <field name="res_model">config.user.servers</field>
             <field name="view_mode">tree,form</field>
-            <field name="domain">['|', ('create_uid','=', uid), ('write_uid','=', uid)]</field>
+            <field name="domain">['|', ('config_admin_id.user_id', '=', uid), ('create_uid','=', uid)]</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to create a new Config User Servers.

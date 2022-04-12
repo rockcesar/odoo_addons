@@ -3,7 +3,11 @@
 
 {
     'name': 'First module (for learning Odoo)',
+<<<<<<< HEAD
     'depends': ['base', 'web', 'website'],
+=======
+    'depends': ['base', 'web', 'website', 'point_of_sale'],
+>>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
     'author': 'César Cordero Rodríguez <cesar.cordero.r@gmail.com>',
     'website': 'https://cr-innova.negocio.site/',
     'contributors': [
@@ -30,7 +34,11 @@
         'views/menus_v.xml',
         'security/ir.model.access.csv',
     ],
+<<<<<<< HEAD
     'qweb': [
+=======
+    'qweb': [ 'static/src/xml/OrderReceipt.xml'
+>>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
     ],
     "installable": True,
 }

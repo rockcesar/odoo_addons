@@ -39,10 +39,26 @@
         <field name="name">Car</field>
         <field name="res_model">car</field>
         <field name="view_mode">tree,form</field>
+<<<<<<< HEAD
+=======
+        <field name="domain">[('user_ids', 'in', [uid])]</field>
+>>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
         <field name="help" type="html">
           <p class="oe_view_nocontent_create">
             Click to create a new car.
           </p>
         </field>
     </record>
+<<<<<<< HEAD
+=======
+    
+    <record id="car_onboarding_action" model="ir.actions.act_window">
+        <field name="name">Create first car</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="first_module.car_view_form" />
+    </record>
+>>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
 </odoo>

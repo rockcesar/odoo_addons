@@ -1,3 +1,7 @@
+# Install config parser:
+
+sudo pip3 install configparser
+
 # Install odoo:
 
 # https://www.odoo.com/documentation/10.0/setup/install.html
