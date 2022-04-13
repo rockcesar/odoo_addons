@@ -25,7 +25,7 @@
     </template>
     
         <template id="new_header" inherit_id="web.layout">
-           <xpath expr="//header" position="after">
+           <xpath expr="//head" position="after">
                <div id="google_translate_element"></div>
                     
                 <style>
