@@ -136,16 +136,14 @@ var refresh_board = function(){
     if(tab_name !== "import"){
         show_puzzle(tab_name, true);
         $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
-        var tabs_names = ["easy",
-                         "medium",
-                         "hard",
+        var tabs_names = ["hard",
                          "very-hard",
                          "insane",
                          "inhuman",
                          "import"];
 
-        for(var i = 0; i < 7; i++){
-            $("#"+tabs_names[i]).attr("disabled", false);
+        for(var i = 0; i < 5; i++){
+            $("#"+tabs_names[i]).parent().show();
         }
     }
 }
@@ -275,9 +273,7 @@ var init_controls = function(){
             $('.timer').countimer('stop');
             solve_puzzle(get_tab());
             var tab_name = get_tab();
-            var tabs_names = ["easy",
-                         "medium",
-                         "hard",
+            var tabs_names = ["hard",
                          "very-hard",
                          "insane",
                          "inhuman",
@@ -285,9 +281,9 @@ var init_controls = function(){
 
             if(tab_name != "import")
             {
-                for(var i = 0; i < 7; i++){
+                for(var i = 0; i < 5; i++){
                     if(tab_name != tabs_names[i])
-                        $("#"+tabs_names[i]).attr("disabled", "disabled");
+                        $("#"+tabs_names[i]).parent().hide();
                 }
                 for(var r = 0; r < 9; ++r){
                     for(var c = 0; c < 9; ++c){
