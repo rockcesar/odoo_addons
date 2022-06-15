@@ -137,9 +137,7 @@ var refresh_board = function(){
         show_puzzle(tab_name, true);
         $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
         alert("hello");
-        var tabs_names = ["easy",
-                         "medium",
-                         "hard",
+        var tabs_names = ["hard",
                          "very-hard",
                          "insane",
                          "inhuman",
@@ -147,8 +145,7 @@ var refresh_board = function(){
 
         for(var i = 0; i < 7; i++){
             alert(tabs_names[i]);
-            $("#"+tabs_names[i]).parent().addClass("disabled");
-            $("#"+tabs_names[i]).attr("disabled", "disabled");
+            $("#"+tabs_names[i]).parent().hide();
         }
     }
 }
