@@ -145,7 +145,7 @@ var refresh_board = function(){
                          "import"];
 
         for(var i = 0; i < 7; i++){
-            $("#"+tabs_names[i]).addClass("disabled");
+            $("#"+tabs_names[i]).parent().addClass("disabled");
         }
     }
 }
