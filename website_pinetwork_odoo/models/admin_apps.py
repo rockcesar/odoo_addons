@@ -499,7 +499,7 @@ class admin_apps(models.Model):
 
                     """ Build your payment """
                     payment_data = {
-                      "amount": float(admin_app_list.pi_users_dev_to_pay_per_user),
+                      "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
                       "memo": "Payment prize from LatinChain Platform",
                       "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
                       "uid": user_uid
