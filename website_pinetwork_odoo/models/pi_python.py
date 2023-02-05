@@ -24,15 +24,18 @@ class PiNetwork:
     fee = ""
 
     def initialize(self, api_key, wallet_private_key, network):
-        if not self.validate_private_seed_format(wallet_private_key):
-            print("No valid private seed!")
-        self.api_key = api_key
-        self.load_account(wallet_private_key, network)
-        self.base_url = "https://api.minepi.com"
-        self.open_payments = {}        
-        self.network = network
-        self.fee = self.server.fetch_base_fee()
-        #self.fee = fee
+        try:
+            if not self.validate_private_seed_format(wallet_private_key):
+                print("No valid private seed!")
+            self.api_key = api_key
+            self.load_account(wallet_private_key, network)
+            self.base_url = "https://api.minepi.com"
+            self.open_payments = {}        
+            self.network = network
+            self.fee = self.server.fetch_base_fee()
+            #self.fee = fee
+        except:
+            return False
 
     def get_balance(self):
         try:
