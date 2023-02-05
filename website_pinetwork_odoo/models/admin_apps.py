@@ -174,7 +174,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     #pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', domain=[('pi_user_role', 'in', ['latinchain_dev', 'latinchain_adm'])], groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_paid_rel', string='Devs Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_to_pay_per_user = fields.Float('Devs To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -428,6 +428,8 @@ class admin_apps(models.Model):
                  DO NOT expose these values to public
             """
             admin_app_list = self_i
+
+            self_i.pi_users_devs_paid_ids = [(6, 0, [])]
             
             api_key = admin_app_list.admin_key
             wallet_private_seed = admin_app_list.wallet_private_seed
@@ -500,7 +502,7 @@ class admin_apps(models.Model):
                     """ Build your payment """
                     payment_data = {
                       "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
-                      "memo": "Payment prize from LatinChain Platform",
+                      "memo": "Dev payment from LatinChain Platform",
                       "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
                       "uid": user_uid
                     }
