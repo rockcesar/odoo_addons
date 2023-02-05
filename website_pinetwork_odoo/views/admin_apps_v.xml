@@ -52,6 +52,10 @@
                                     <field name="pi_users_winners_to_pay"/>
                                     <field name="pi_users_winners_to_pay_per_user"/>
                                     <field name="pi_users_winners_completed_payments"/>
+                                    <field name="pi_users_devs_ids"/>
+                                    <field name="pi_users_devs_paid_ids"/>
+                                    <field name="pi_users_devs_to_pay_per_user"/>
+                                    <field name="pi_users_devs_completed_payments"/>
                                     <field name="block_points"/>
                                     <field name="pi_users_winners_html"/>
                                     <field name="pi_transactions_ids"/>
