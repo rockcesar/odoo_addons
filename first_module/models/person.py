@@ -42,10 +42,7 @@ class person(models.Model):
     photo_litle = fields.Binary(string='Photo of the person',
                                 compute="_compute_photo_depends",
                                 store=False)
-<<<<<<< HEAD
-=======
     first_module_onboarding_car_state = fields.Selection([('option1', 'Option1'), ('option2', 'Option2')], string="Options")
->>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
     
     @api.depends('photo')
     def _compute_photo_depends(self):
@@ -80,14 +77,14 @@ class person(models.Model):
         unlink_result = super(person, self).unlink()
         
         return unlink_result
-<<<<<<< HEAD
-=======
     
     @api.model
     def action_button_1(self):
         action = self.env["ir.actions.actions"]._for_xml_id("first_module.car_onboarding_action")
         #return action
-        action.update({'res_id': self.env['car'].search([], limit=1)[0].id})
+        car = self.env['car'].search([], limit=1)
+        if len(car) > 0:
+            action.update({'res_id': car[0].id})
         
         _logger.info(str(action))
         
@@ -114,4 +111,3 @@ class person(models.Model):
                'view_mode': 'form',
                #'context': {'default_person_id': self.id}
                }
->>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107

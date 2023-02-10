@@ -3,11 +3,7 @@
 <odoo>
     <data>
         <template id="person_website">
-<<<<<<< HEAD
-            <t t-call="website.layout">
-=======
             <t t-call="web.layout">
->>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
                 <div class="col-12 col-sm-6 col-md-8">
                     <t t-foreach="docs" t-as="r">
                         <div class="page">
@@ -38,8 +34,6 @@
             </t>
         </template>
         
-<<<<<<< HEAD
-=======
         <template id="person_onboard">
             <t t-call="web.layout">
                 <div>
@@ -100,6 +94,5 @@
             </t>
         </template>
         
->>>>>>> 961b5f77435db53686f600f11b302b3f8d9aa107
     </data>
 </odoo>
