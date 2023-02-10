@@ -82,7 +82,9 @@ class person(models.Model):
     def action_button_1(self):
         action = self.env["ir.actions.actions"]._for_xml_id("first_module.car_onboarding_action")
         #return action
-        action.update({'res_id': self.env['car'].search([], limit=1)[0].id})
+        car = self.env['car'].search([], limit=1)
+        if len(car) > 0:
+            action.update({'res_id': car[0].id})
         
         _logger.info(str(action))
         
