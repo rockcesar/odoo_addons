@@ -3,7 +3,7 @@
 <odoo>
     <data>
         <template id="person_website">
-            <t t-call="website.layout">
+            <t t-call="web.layout">
                 <div class="col-12 col-sm-6 col-md-8">
                     <t t-foreach="docs" t-as="r">
                         <div class="page">
@@ -31,6 +31,66 @@
                         </div>
                     </t>
                 </div>
+            </t>
+        </template>
+        
+        <template id="person_onboard">
+            <t t-call="web.layout">
+                <div>
+                    Hi. Select the one you need and click in Crear un Carro<br/>
+                    Example of button <input type="button" value="IR" id="ir_jquery"/>
+                </div>
+
+                <script type="text/javascript">
+                    function call_function() {
+                        var data = {
+                                    'var_1': "123",
+                                    'var_2': "321",
+                                    'csrf_token': odoo.csrf_token,
+                                };
+                        return $.post( "/call-fuction-example", data).done(function(data) {
+                            data = JSON.parse(data);
+                            alert(data.result);
+                            location.reload();
+                        }).fail(function() {
+                            
+                        });
+                    }
+                    $( document ).ready(function() {
+                        $( "#ir_jquery" ).click(function() {
+                            call_function();
+                        });
+                    });
+
+                </script>
+            </t>
+        </template>
+        
+        <template id="onboarding_car_step">
+            <t t-call="base.onboarding_step">
+                <t t-set="title">Create Car</t>
+                <t t-set="description">
+                    Create a car.
+                </t>
+                <t t-set="btn_text">Create</t>
+                <t t-set="done_text">Done!</t>
+                <t t-set="method" t-value="'action_button_1'" />
+                <t t-set="model" t-value="'person'" />
+                <t t-set="state" t-value="state.get('first_module_onboarding_car_state')" />
+            </t>
+        </template>
+        
+        <template id="person_onboarding_panel" name="person.onboarding.panel">
+            <t t-call="base.onboarding_container">
+                <t t-set="classes" t-value="'o_onboarding_blue'"/>
+                <t t-set="bg_image" t-value="'/first_module/static/src/img/account_invoice_onboarding_bg.jpg'"/>
+                <t t-set="close_method" t-value="'method_2'"/>
+                <t t-set="close_model" t-value="'car'"/>
+                <t t-set="text_completed">Congratulations! You are all set.</t>
+
+                <!--<t t-call="base.onboarding_company_step" name="company_step" />-->
+                <t t-call="first_module.onboarding_car_step" name="car_layout_step" />
+                <!--<t t-call="account.onboarding_create_invoice_step" name="create_invoice_step" />-->
             </t>
         </template>
         

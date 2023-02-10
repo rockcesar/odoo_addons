@@ -18,3 +18,7 @@ class car(models.Model):
         required=False,
     )
     photo_person = fields.Binary(related="person_id.photo")
+    
+
+    def method_2(self):
+        return True
