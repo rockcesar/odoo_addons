@@ -37,7 +37,10 @@
         <field name="name">person.tree</field>
         <field name="model">person</field>
         <field name="arch" type="xml">
-            <tree string="Person">
+            <tree string="Person" banner_route="/firs_module/person_onboarding">
+                <header>
+                    <button name="action_button_2" string="Crear un carro" type="object" class="oe_stat_button"/>
+                </header>
                 <field name="name"/>
                 <field name="last_name"/>
                 <field name="age"/>
