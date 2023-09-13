@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {   'active': True,
     'author': u'César Cordero Rodríguez <cesar.cordero.r@gmail.com>',
-    'website': 'https://cr-innova.negocio.site/',
+    'website': 'https://rockcesar.github.io/',
     'category': 'Translation',
     'demo_xml': [],
     'depends': [
