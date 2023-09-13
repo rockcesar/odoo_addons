@@ -27,7 +27,7 @@
     'version': '10.0.1.0.0',
     "author": "César Cordero Rodríguez & ACSONE SA/NV, Odoo Community Association (OCA)",
     "maintainer": "César Cordero Rodríguez & ACSONE SA/NV,Odoo Community Association (OCA)",
-    "website": "http://www.acsone.eu https://cr-innova.negocio.site/",
+    "website": "http://www.acsone.eu https://rockcesar.github.io/",
     'category': 'Technical Settings',
     'depends': [
         'web',
