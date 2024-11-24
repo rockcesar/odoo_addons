@@ -885,7 +885,6 @@
                         var colorbox_opened = false;
                         async function colorboxLoaded()
                         {
-			    alert($("#nopopup").val());
                             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) &amp;&amp; $("#nopopup").val() == false)
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
