@@ -148,7 +148,7 @@
         const sourceLang = localStorage.getItem('googleTranslateSourceLang');
         const targetLang = localStorage.getItem('googleTranslateTargetLang');
 
-        if (sourceLang && targetLang) {
+        if (sourceLang &amp;&amp; targetLang) {
             // Set the selected languages on the page (you'll need to inspect the DOM to find the correct elements)
             document.getElementById('sourceLangSelect').value = sourceLang;
             document.getElementById('targetLangSelect').value = targetLang;
@@ -590,6 +590,7 @@
                     }
 
 			// ==UserScript==
+// @name         Google Tra// ==UserScript==
 // @name         Google Translate Language Saver
 // @namespace    http://tampermonkey.net/
 // @version      0.1
@@ -613,7 +614,7 @@
         const sourceLang = localStorage.getItem('googleTranslateSourceLang');
         const targetLang = localStorage.getItem('googleTranslateTargetLang');
 
-        if (sourceLang && targetLang) {
+        if (sourceLang &amp;&amp; targetLang) {
             // Set the selected languages on the page (you'll need to inspect the DOM to find the correct elements)
             document.getElementById('sourceLangSelect').value = sourceLang;
             document.getElementById('targetLangSelect').value = targetLang;
