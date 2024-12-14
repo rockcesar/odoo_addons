@@ -123,50 +123,6 @@
                                 //observer.observe(el4);
                           }
                         }
-
-			    // ==UserScript==
-// @name         Google Translate Language Saver
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Saves your preferred Google Translate languages.
-// @author       Your Name
-// @match        https://translate.google.com/*
-// @grant        none
-// ==/UserScript==
-
-(function() {
-    'use strict';
-
-    // Function to save languages to local storage
-    function saveLanguages(sourceLang, targetLang) {
-        localStorage.setItem('googleTranslateSourceLang', sourceLang);
-        localStorage.setItem('googleTranslateTargetLang', targetLang);
-    }
-
-    // Function to load languages from local storage
-    function loadLanguages() {
-        const sourceLang = localStorage.getItem('googleTranslateSourceLang');
-        const targetLang = localStorage.getItem('googleTranslateTargetLang');
-
-        if (sourceLang &amp;&amp; targetLang) {
-            // Set the selected languages on the page (you'll need to inspect the DOM to find the correct elements)
-            document.getElementById('sourceLangSelect').value = sourceLang;
-            document.getElementById('targetLangSelect').value = targetLang;
-        }
-    }
-
-    // Load languages on page load
-    loadLanguages();
-
-    // Save languages when they change
-    document.addEventListener('change', (event) => {
-        if (event.target.id === 'sourceLangSelect' || event.target.id === 'targetLangSelect') {
-            const sourceLang = document.getElementById('sourceLangSelect').value;
-            const targetLang = document.getElementById('targetLangSelect').value;
-            saveLanguages(sourceLang, targetLang);
-        }
-    });
-})();
                         
                     </script>
                     
@@ -588,51 +544,6 @@
                             //observer.observe(el4);
                       }
                     }
-
-			// ==UserScript==
-// @name         Google Tra// ==UserScript==
-// @name         Google Translate Language Saver
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Saves your preferred Google Translate languages.
-// @author       Your Name
-// @match        https://translate.google.com/*
-// @grant        none
-// ==/UserScript==
-
-(function() {
-    'use strict';
-
-    // Function to save languages to local storage
-    function saveLanguages(sourceLang, targetLang) {
-        localStorage.setItem('googleTranslateSourceLang', sourceLang);
-        localStorage.setItem('googleTranslateTargetLang', targetLang);
-    }
-
-    // Function to load languages from local storage
-    function loadLanguages() {
-        const sourceLang = localStorage.getItem('googleTranslateSourceLang');
-        const targetLang = localStorage.getItem('googleTranslateTargetLang');
-
-        if (sourceLang &amp;&amp; targetLang) {
-            // Set the selected languages on the page (you'll need to inspect the DOM to find the correct elements)
-            document.getElementById('sourceLangSelect').value = sourceLang;
-            document.getElementById('targetLangSelect').value = targetLang;
-        }
-    }
-
-    // Load languages on page load
-    loadLanguages();
-
-    // Save languages when they change
-    document.addEventListener('change', (event) => {
-        if (event.target.id === 'sourceLangSelect' || event.target.id === 'targetLangSelect') {
-            const sourceLang = document.getElementById('sourceLangSelect').value;
-            const targetLang = document.getElementById('targetLangSelect').value;
-            saveLanguages(sourceLang, targetLang);
-        }
-    });
-})();
                     
                 </script>
                 
