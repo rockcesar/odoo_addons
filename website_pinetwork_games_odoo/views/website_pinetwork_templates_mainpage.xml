@@ -91,8 +91,6 @@
                               {
                                   lang_google='es';
                               }
-			    
-                              setcookie("googtrans",localStorage.setItem('preferredLanguage'), time()+3600, "/", window.location.hostname);
                               
                               new google.translate.TranslateElement({pageLanguage: lang_google,
                                                                     autoDisplay: true,
@@ -126,25 +124,6 @@
                                 //observer.observe(el4);
                           }
                         }
-
-			    // Assuming the language selection element has the ID "google_translate_element"
-const languageSelect = document.getElementById('google_translate_element');
-
-window.getcookie = function(name) {
-  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  if (match) return match[2];
-}
-			    
-languageSelect.addEventListener('change', function() {
-  const googtransCookie = getcookie('googtrans');
-
-  if (googtransCookie) {
-    const googtransValue = googtransCookie;
-    //console.log('Googtrans cookie value:', googtransValue);
-    localStorage.setItem('preferredLanguage', googtransValue);
-    // You can now use the googtransValue for further processing, such as sending it to a server or storing it locally.
-  }
-});
                         
                     </script>
                     
