@@ -395,17 +395,6 @@
                                   color: black !important;
                                 }
                                 
-                                .darkmode--activated .border-gradient {
-                                  border:3px solid;
-                                  margin-bottom:5px;
-                                  padding:10px;
-                                  width: 100%;
-                                  border-radius: 20px;
-                                  border-color: black;
-                                  
-                                  color: black !important;
-                                }
-                                
                                 h5, h3, div, strong {
                                     color: black !important;
                                 }
