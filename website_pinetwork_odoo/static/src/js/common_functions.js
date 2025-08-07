@@ -111,12 +111,12 @@ const speechModule = (() => {
             var lang_synthesis='en';
             if(location.pathname.substring(0, 3) == "/es")
             {
-                lang_synthesis='es';
+                lang_synthesis='sp';
             }
-            alert(lang_synthesis);
+            alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
             const voice = voices.find(v => v.lang.startsWith(lang_synthesis));
-            alert(voice);
+            alert("voice " + voice);
             /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
                           voices.find(v => v.lang.startsWith('en'));*/
 
