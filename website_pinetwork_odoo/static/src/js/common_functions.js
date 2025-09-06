@@ -403,8 +403,9 @@ var loadLangInitial = () => {
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
-        
+        alert(savedLanguage1);
         if (savedLanguage1) {
+            alert("123");
             document.documentElement.setAttribute('lang', savedLanguage1);
             localStorage.setItem('lastTranslateLanguage', savedLanguage1);
         }
