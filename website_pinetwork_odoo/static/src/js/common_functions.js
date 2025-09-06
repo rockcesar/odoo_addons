@@ -323,6 +323,8 @@ var checkLang = () => {
                 lang += "-" + lang1[1];
         }catch(e){
         }
+
+        alert(lang);
         
         if(lang)
         {
