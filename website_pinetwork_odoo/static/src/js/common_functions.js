@@ -323,8 +323,6 @@ var checkLang = () => {
                 lang += "-" + lang1[1];
         }catch(e){
         }
-
-        alert(lang);
         
         if(lang)
         {
@@ -408,6 +406,7 @@ var loadLangInitial = () => {
         
         if (savedLanguage1) {
             document.documentElement.setAttribute('lang', savedLanguage1);
+            localStorage.setItem('lastTranslateLanguage', savedLanguage1);
         }
     }else{
         if(window.location.pathname.substring(0, 3) == "/es")
