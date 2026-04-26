@@ -1462,18 +1462,21 @@ class pi_users(models.Model):
                 ('doge_female', 'Female Dog'), ('doge_male', 'Male Dog'),
                 ('dragon_female', 'Female Dragon'), ('dragon_male', 'Male Dragon'),
                 ('eagle_female', 'Female Eagle'), ('eagle_male', 'Male Eagle'),
+                ('elephant_female', 'Female Elephant'), ('elephant_male', 'Male Elephant'),
                 ('gnu_female', 'Female GNU'), ('gnu_male', 'Male GNU'),
                 ('horse_female', 'Female Horse'), ('horse_male', 'Male Horse'),
                 ('queen_female', 'Female Queen'), ('king_male', 'Male King'),
                 ('lion_female', 'Female Lion'), ('lion_male', 'Male Lion'),
                 ('macaw_female', 'Female Macaw'), ('macaw_male', 'Male Macaw'),
                 ('math_girl', 'Math Girl'), ('math_guy', 'Math Guy'),
-                ('monkey_female', 'Monkey Female'), ('monkey_male', 'Monkey Male'),
+                ('monkey_female', 'Female Monkey'), ('monkey_male', 'Male Monkey'),
                 ('pawn_female', 'Female Pawn'), ('pawn_male', 'Male Pawn'),
                 ('penguin_female', 'Female Penguin'), ('penguin_male', 'Male Penguin'),
                 ('programmer_female', 'Female Programmer'), ('programmer_male', 'Male Programmer'),
                 ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger'),
-                ('tower', 'Tower')]
+                ('tower', 'Tower'),
+                ('trex_female', 'Female T-Rex'), ('trex_male', 'Male T-Rex'),
+                ('whale_female', 'Female Whale'), ('whale_male', 'Male Whale')]
 
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
