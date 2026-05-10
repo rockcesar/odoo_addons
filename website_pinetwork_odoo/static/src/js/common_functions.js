@@ -38,7 +38,11 @@ async function loadMessageLatinChain(){
     
 }
 
-loadMessageLatinChain();
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadMessageLatinChain();
+    
+});
 
 /*document.addEventListener('DOMContentLoaded', (event) => {
     $.ajaxSetup({
