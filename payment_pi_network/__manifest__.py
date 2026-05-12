@@ -1,5 +1,5 @@
 {
-    'name': 'Pi Network Payment Provider',
+    'name': 'Payment Provider for Pi Network',
     'version': '1.0',
     'category': 'Accounting/Payment Providers',
     'summary': 'Allows you to receive payments with Pi Coin in your e-commerce store.',
