@@ -9,6 +9,9 @@
                        Adapt to your business.
                        
                        Payment provider module to integrate the Pi Network SDK into Odoo 18.
+                       
+                       Repo:
+                       https://github.com/rockcesar/odoo_addons/tree/18.0
                    """,
     'version': '1.0',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
