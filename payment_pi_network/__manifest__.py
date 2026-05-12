@@ -2,10 +2,10 @@
     'name': 'Pi Network Payment Provider',
     'version': '1.0',
     'category': 'Accounting/Payment Providers',
-    'summary': 'Permite recibir pagos con Pi Coin en tu e-commerce.',
+    'summary': 'Allows you to receive payments with Pi Coin in your e-commerce store.',
     'description': """
                        This module is made with AI. Test with caution.
-                       Módulo de proveedor de pagos para integrar la SDK de Pi Network en Odoo 18.
+                       Payment provider module to integrate the Pi Network SDK into Odoo 18.
                    """,
     'version': '1.0',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
