@@ -13,7 +13,8 @@
         'views/payment_templates.xml',
         'data/payment_provider_data.xml',
     ],
+    'images': ['static/description/icon.png'],
     'application': False,
     'installable': True,
-    'license': 'LGPL-3',
+    'license': '',
 }
