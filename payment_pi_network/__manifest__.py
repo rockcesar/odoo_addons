@@ -7,6 +7,9 @@
                        This module is made with AI. Test with caution.
                        Módulo de proveedor de pagos para integrar la SDK de Pi Network en Odoo 18.
                    """,
+    'version': '1.0',
+    "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
+    "website": "https://rockcesar.github.io/",
     'depends': ['payment', 'website_sale'],
     'data': [
         'views/payment_provider_views.xml',
