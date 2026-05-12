@@ -5,6 +5,9 @@
     'summary': 'Allows you to receive payments with Pi Coin in your e-commerce store.',
     'description': """
                        This module is made with AI. Test with caution.
+                       
+                       Adapt to your business.
+                       
                        Payment provider module to integrate the Pi Network SDK into Odoo 18.
                    """,
     'version': '1.0',
