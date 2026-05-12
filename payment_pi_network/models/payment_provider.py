@@ -10,12 +10,12 @@ class PaymentProvider(models.Model):
     pi_app_id = fields.Char(
         string="Pi App ID", 
         help="El ID de la aplicación proporcionado por Pi Developer Portal.",
-        required_if_provider='pi_network'
+        required=False
     )
     pi_api_key = fields.Char(
         string="Pi API Key", 
         help="Tu clave API secreta para verificar los pagos en el backend.",
-        required_if_provider='pi_network'
+        required=False
     )
     
     def _get_supported_currencies(self):
