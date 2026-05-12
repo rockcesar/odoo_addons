@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="pi_network_inline_form">
+        <!-- Input oculto para que Odoo sepa qué procesar -->
+        <input type="hidden" name="data_set" t-att-data-action-url="api_url" />
+        
+        <div id="pi-payment-container" class="mt-3">
+            <button type="button" id="btn-pay-pi" class="btn btn-primary w-100">
+                Pagar con Pi Network
+            </button>
+        </div>
+
+        <!-- Cargar el SDK de Pi -->
+        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const appId = '<t t-out="pi_app_id"/>';
+                const amount = parseFloat('<t t-out="amount"/>');
+                const memo = '<t t-out="memo"/>';
+                const txRef = '<t t-out="tx_reference"/>';
+
+                // Inicializar Pi SDK
+                try {
+                    Pi.init({ version: "2.0", sandbox: false }); // Cambiar a true para pruebas
+                } catch (e) {
+                    console.error("Error inicializando Pi SDK", e);
+                }
+
+                document.getElementById('btn-pay-pi').addEventListener('click', function() {
+                    Pi.createPayment({
+                        amount: amount,
+                        memo: memo,
+                        metadata: { reference: txRef },
+                    }, {
+                        onReadyForServerApproval: function(paymentId) {
+                            // Llamar a nuestro controlador Odoo
+                            fetch('/payment/pi_network/approve', {
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({ params: { paymentId: paymentId, tx_reference: txRef }})
+                            });
+                        },
+                        onReadyForServerCompletion: function(paymentId, txid) {
+                            // Llamar a nuestro controlador Odoo tras confirmación blockchain
+                            fetch('/payment/pi_network/complete', {
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({ params: { paymentId: paymentId, txid: txid, tx_reference: txRef }})
+                            }).then(() => {
+                                window.location.href = '/payment/status';
+                            });
+                        },
+                        onCancel: function(paymentId) { console.log("Pago cancelado por el usuario."); },
+                        onError: function(error, payment) { console.error("Error en el pago", error); }
+                    });
+                });
+            });
+        </script>
+    </template>
+</odoo>
