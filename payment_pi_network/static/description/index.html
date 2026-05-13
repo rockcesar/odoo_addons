@@ -20,13 +20,13 @@
                 </a>
             </p>
 
-            <p>
+            <div style="padding: 12px; border-radius: 6px; border: 1px solid #e1e4e8;">
                 Make sure to create the <strong>Pi currency</strong> in Odoo to make the following line work:
                 <br/>
                 <a href="https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25" target="_blank" style="font-size: 0.85em; text-decoration: none; color: #007bff;">
                     https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25
                 </a>
-            </p>
+            </div>
 
             <div style="background: #fdfdfe; padding: 12px; border-radius: 6px; border: 1px solid #e1e4e8; font-family: 'Courier New', Courier, monospace; font-size: 13px; color: #c41280; background-color: #f8f9fa;">
                 res |= self.env['res.currency'].search([('name', '=', 'PI')])
