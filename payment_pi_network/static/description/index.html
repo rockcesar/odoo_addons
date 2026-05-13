@@ -13,7 +13,17 @@
     <br/><br/>
     Repo:
     <br/>
-    https://github.com/rockcesar/odoo_addons/tree/18.0
+    <a href="https://github.com/rockcesar/odoo_addons/tree/18.0" target="_blank">
+        Link
+    </a>
+    <br/><br/>
+    Make sure to create the Pi currency in Odoo to make works the following line:
+    <br/>
+    <a href="https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25" target="_blank">
+        Link
+    </a>
+    <br/>
+    res |= self.env['res.currency'].search([('name', '=', 'PI')])
 </p>
             </p>
         </div>
