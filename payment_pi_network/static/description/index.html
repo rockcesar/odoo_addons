@@ -1,29 +1,33 @@
 <section class="oe_container">
-    <div class="oe_row oe_spaced" style="max-width: 500px !important; word-break: break-all !important">
+    <div class="oe_row oe_spaced">
         <h2 class="oe_slogan" style="color:#875A7B;">Payment Provider for Pi Network</h2>
-        <div style="width:100%">
+        <div style="max-width: 500px; word-break: break-all; margin: 0 auto; text-align: left;">
             <p class="oe_mt32">
-
-<p style="max-width: 500px !important; word-break: break-all !important">
-    This module is made with AI. Test with caution.
-    <br/><br/>
-    Adapt to your business.
-    <br/><br/>
-    Payment provider module to integrate the Pi Network SDK into Odoo 18.
-    <br/><br/>
-    Repo:
-    <br/>
-    https://github.com/rockcesar/odoo_addons/tree/18.0
-    <br/><br/>
-    Make sure to create the Pi currency in Odoo to make works the following line:
-    <br/>
-    <div style="max-width: 500px !important; word-break: break-all !important">
-        https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25
-    </div>
-    <br/><br/>
-    res |= self.env['res.currency'].search([('name', '=', 'PI')])
-</p>
+                <strong>This module is made with AI. Test with caution.</strong>
+                <br/><br/>
+                Adapt to your business.
+                <br/><br/>
+                Payment provider module to integrate the Pi Network SDK into Odoo 18.
             </p>
+
+            <p>
+                <strong>Repo:</strong><br/>
+                <a href="https://github.com/rockcesar/odoo_addons/tree/18.0" target="_blank">
+                    https://github.com/rockcesar/odoo_addons/tree/18.0
+                </a>
+            </p>
+
+            <p>
+                Make sure to create the <strong>Pi currency</strong> in Odoo to make the following line work:
+                <br/>
+                <a href="https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25" target="_blank" style="font-size: 0.9em;">
+                    https://github.com/rockcesar/odoo_addons/blob/e7c5efd6004c52ff15abaeac9a0ebc3c3d20d749/payment_pi_network/models/payment_provider.py#L25
+                </a>
+            </p>
+
+            <div style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #dee2e6; font-family: monospace; font-size: 13px; color: #e83e8c;">
+                res |= self.env['res.currency'].search([('name', '=', 'PI')])
+            </div>
         </div>
     </div>
 </section>
