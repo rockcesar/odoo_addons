@@ -1396,6 +1396,13 @@ $( document ).ready(function() {
         }
     });
     
+    $( "#button_tip" ).off('click').on('click', function() {
+        if(pi_user_id == "" && pi_user_code == "")
+        {
+            alert("Access from Pi Browser to give us a tip.");
+        }
+    });
+    
     $('.giving-tip').click(function() {
         $('#button_tip').click();
     });
@@ -1755,16 +1762,6 @@ $( document ).ready(function() {
                                 alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
                             }
                         }
-                        
-                        $( "#button_tip" ).click(function() {
-                            if(pi_user_id != "" && pi_user_code != "")
-                            {
-                                executepayment();
-                            }else
-                            {
-                                alert("Access from Pi Browser to give us a tip.");
-                            }
-                        });
                         
                         if(!unblocked)
                         {
