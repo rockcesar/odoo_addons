@@ -3607,6 +3607,14 @@
                             flex-grow: 1;
                             /* You might remove fixed heights if they are present */
                         }
+                        
+                        #blockingOverlay > div::-webkit-scrollbar {
+                            width: 8px;
+                        }
+                        #blockingOverlay > div::-webkit-scrollbar-thumb {
+                            background-color: #888;
+                            border-radius: 4px;
+                        }
                     </style>
                     
                     <!-- Button trigger modal -->
