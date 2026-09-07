@@ -1650,7 +1650,7 @@
                                             <button class="latin-show-all btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-top: 2px;">
+                                    <div class="row" style="margin-top: 2px;" translate="no">
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-sendtip btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tip</div></button>
                                         </div>
