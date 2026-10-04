@@ -1909,9 +1909,9 @@ async function getUserData() {
             localStorage.setItem(STORAGE_KEYS.NICK, startCommonAppsAIVars.pi_user_code);
             completed += 1;
           }
-          
-          return true;
         } catch (e) {}
+        
+        return true;
     }
     
     return false;
