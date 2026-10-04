@@ -1896,6 +1896,8 @@ async function getUserData() {
         
         if(count_complete >= 30 || (startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != ""))
             break;
+        
+        alert("1");
     }
     
     if(startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != "")
@@ -1909,12 +1911,7 @@ async function getUserData() {
           }
         } catch (e) {}
         
-        if(completed >= 1)
-        {
-            return true;
-        }
-        
-        return false;
+        return true;
     }
     
     return false;
@@ -1925,8 +1922,7 @@ let app;
 window.addEventListener('DOMContentLoaded', () => {
   (async () => {
     let userDataVar = await getUserData();
-  
-    alert(userDataVar);
+    
     if(userDataVar)
     {
         app = new IRCClientApp();
